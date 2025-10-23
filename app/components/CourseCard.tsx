@@ -1,0 +1,62 @@
+'use client';
+
+import { Clock, Users } from 'lucide-react';
+import Link from 'next/link';
+import { Course } from '../lib/supabase';
+
+export default function CourseCard({ course }: { course: Course }) {
+  return (
+    <div className="bg-white rounded-md overflow-hidden shadow-md border border-gray-100">
+      {/* Course Image */}
+      <div className="relative">
+        <img
+          src={
+            // Default image fallback
+            course.category === 'SAP'
+              ? 'https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=800'
+              : course.category === 'Development'
+              ? 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800'
+              : 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800'
+          }
+          alt={course.title}
+          className="w-full h-64 object-cover" // 👈 exact dimension: 800x450 px
+        />
+      </div>
+
+      {/* Course Content */}
+      <div className="p-6">
+        {/* Category and Level */}
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-sm bg-blue-900 text-white px-3 py-1 rounded-full">
+            {course.category}
+          </span>
+          <span className="text-gray-500 text-sm">Beginner</span>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2 min-h-[48px]">
+          {course.title}
+        </h3>
+
+        {/* Duration + Students */}
+        <div className="flex items-center justify-between text-gray-600 text-sm mb-5">
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4" />
+            <span>{course.duration}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            
+          </div>
+        </div>
+
+        {/* Enroll Button */}
+        <Link
+                    href={course.url}
+                    className="inline-block w-full text-center bg-gradient-to-r from-blue-900 to-indigo-900 text-white font-medium py-2.5 rounded-full hover:scale-[1.02] transition-all"
+                  >
+                    Enroll Now
+                  </Link>
+      </div>
+    </div>
+  );
+}

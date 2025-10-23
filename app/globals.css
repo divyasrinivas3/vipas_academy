@@ -1,0 +1,146 @@
+/* =========================================
+   Google Fonts
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   Tailwind Directives
+========================================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   Base Styles
+========================================= */
+@layer base {
+  /* Root CSS variables */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  /* Dark mode */
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+
+  /* Global font & background */
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Sora', sans-serif;
+  }
+
+  /* Course card hover effect */
+.course-card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* body {
+  font-family: 'Sora', sans-serif;
+} */
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Border utility fix */
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+}
+
+/* =========================================
+   Marquee Section CSS
+========================================= */
+.marquee-section {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: #002147; 
+  color: white;
+}
+
+.mycustom-marque {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.scrolling-wrap {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+.comm {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.cmn-textslide {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cmn-textslide i {
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* =========================================
+   Blob Animation
+========================================= */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob { animation: blob 7s infinite; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* =========================================
+   Tailwind Overrides / Utilities
+========================================= */
+@layer utilities {
+  /* Add your theme-green background as utility */
+  .bg-theme-green { background-color: blue; }
+  .bg-theme-green-light { background-color: #E8F5E9; }
+  .text-theme-green { color: #5BBB7B; }
+}
