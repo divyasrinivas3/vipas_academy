@@ -32,7 +32,7 @@ interface CurriculumSection {
   id: string;
   section_title: string;
   section_order: number;
-  lessons: Lesson[];
+  Modules: Lesson[];
 }
 
 interface Inclusion {
@@ -48,7 +48,7 @@ interface Course {
   course_duration: string;
   internship:string;
   level: string;
-  lessons_count: number;
+  Modules_count: number;
   students_count: number;
   rating: number;
   reviews_count: number;
@@ -74,12 +74,12 @@ export default function SAPSDDetailsArea() {
     id: "1",
     title: "SAP SD (Sales & Distribution)",
     description:
-      "Master SAP SD to efficiently manage sales, orders, and distribution processes in real-world business scenarios.",
+      "Gain mastery in SAP SD to streamline sales, manage orders, and optimize distribution processes for real-world business success.",
     price: 199,
     course_duration: "3 months",
     internship:"3 months",
     level: "Beginner to Advanced",
-    lessons_count: 120,
+    Modules_count: 120,
     students_count: 1534,
     rating: 4.8,
     reviews_count: 256,
@@ -94,7 +94,7 @@ export default function SAPSDDetailsArea() {
   };
 
   const inclusions: Inclusion[] = [
-    { id: "i1", inclusion_text: "Lifetime access to all lessons and updates" },
+    { id: "i1", inclusion_text: "Lifetime access to all Modules and updates" },
     {
       id: "i2",
       inclusion_text:
@@ -121,7 +121,7 @@ export default function SAPSDDetailsArea() {
       id: "mod1",
       section_title: "Module 1: Introduction to SAP & SAP SD",
       section_order: 1,
-      lessons: [
+      Modules: [
         { id: "l1", lesson_title: "Overview of SAP ERP", lesson_order: 1 },
         { id: "l2", lesson_title: "SAP ECC vs S/4HANA", lesson_order: 2 },
         {
@@ -146,7 +146,7 @@ export default function SAPSDDetailsArea() {
       id: "mod2",
       section_title: "Module 2: Enterprise Structure & Master Data",
       section_order: 2,
-      lessons: [
+      Modules: [
         {
           id: "l6",
           lesson_title:
@@ -170,7 +170,7 @@ export default function SAPSDDetailsArea() {
       id: "mod3",
       section_title: "Module 3: Sales Documents & Transactions",
       section_order: 3,
-      lessons: [
+      Modules: [
         {
           id: "l9",
           lesson_title:
@@ -203,7 +203,7 @@ export default function SAPSDDetailsArea() {
       id: "mod4",
       section_title: "Module 4: Pricing & Conditions",
       section_order: 4,
-      lessons: [
+      Modules: [
         {
           id: "l14",
           lesson_title: "Condition technique in pricing",
@@ -232,7 +232,7 @@ export default function SAPSDDetailsArea() {
       id: "mod5",
       section_title: "Module 5: Shipping & Delivery",
       section_order: 5,
-      lessons: [
+      Modules: [
         {
           id: "l19",
           lesson_title: "Overview of shipping process",
@@ -260,7 +260,7 @@ export default function SAPSDDetailsArea() {
       id: "mod6",
       section_title: "Module 6: Billing & Invoicing",
       section_order: 6,
-      lessons: [
+      Modules: [
         {
           id: "l24",
           lesson_title:
@@ -293,7 +293,7 @@ export default function SAPSDDetailsArea() {
       id: "mod7",
       section_title: "Module 7: Credit & Risk Management",
       section_order: 7,
-      lessons: [
+      Modules: [
         {
           id: "l29",
           lesson_title: "Credit management process in SD",
@@ -311,7 +311,7 @@ export default function SAPSDDetailsArea() {
       id: "mod8",
       section_title: "Module 8: Special Business Processes",
       section_order: 8,
-      lessons: [
+      Modules: [
         { id: "l32", lesson_title: "Third-party sales", lesson_order: 1 },
         { id: "l33", lesson_title: "Intercompany sales", lesson_order: 2 },
         { id: "l34", lesson_title: "Consignment process", lesson_order: 3 },
@@ -331,7 +331,7 @@ export default function SAPSDDetailsArea() {
       id: "mod9",
       section_title: "Module 9: Output & Reports",
       section_order: 9,
-      lessons: [
+      Modules: [
         {
           id: "l37",
           lesson_title: "Output determination (Print, EDI, IDoc, Email)",
@@ -354,7 +354,7 @@ export default function SAPSDDetailsArea() {
       id: "mod10",
       section_title: "Module 10: Integration & Advanced Topics",
       section_order: 10,
-      lessons: [
+      Modules: [
         {
           id: "l40",
           lesson_title: "SD–MM integration (procurement impact on sales)",
@@ -382,7 +382,7 @@ export default function SAPSDDetailsArea() {
       id: "mod11",
       section_title: "Module 11: Real-time Scenarios & Projects",
       section_order: 11,
-      lessons: [
+      Modules: [
         {
           id: "l44",
           lesson_title: "End-to-End Sales Cycle in SAP",
@@ -432,7 +432,7 @@ export default function SAPSDDetailsArea() {
             {/* Course Header */}
             <div className="mb-8">
               <div className="mb-4">
-                <span className="inline-block px-4 py-1.5 bg-theme-green-light text-theme-green text-sm font-medium rounded-md">
+                <span className="inline-block px-4 py-1.5 bg-theme-teal-light text-teal-600 text-sm font-medium rounded-md">
                   {course.category}
                 </span>
               </div>
@@ -498,7 +498,7 @@ export default function SAPSDDetailsArea() {
                   onClick={() => setActiveTab("curriculum")}
                   className={`pb-4 px-2 font-semibold text-base transition-colors relative ${
                     activeTab === "curriculum"
-                      ? "text-theme-green"
+                      ? "text-theme-teal"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -526,12 +526,12 @@ export default function SAPSDDetailsArea() {
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Master the complete sales process in SAP SD from quotation to billing.",
-                      "Efficiently manage customer master data, pricing procedures, and discounts.",
-                      "Process sales orders, deliveries, and billing documents accurately.",
-                      "Gain hands-on experience with SAP SD transactions, reports, and system navigation.",
-                      "Understand integration points with other SAP modules like MM and FICO.",
-                      "Prepare for SAP SD certification and real-world job responsibilities.",
+                      "End-to-End Sales Process: Handle everything from Enquiry → Quotation → Sales Order → Delivery → Billing. ",
+                      "Master Data & Pricing: Configure and manage customer data, pricing procedures, discounts, and taxes. ",
+                      "SAP SD Configurations: Customize order types, item categories, schedule lines, and billing types. ",
+                      "Integration Skills: Connect SAP SD seamlessly with MM, FICO, and CRM modules. ",
+                      "Reporting & Analysis: Generate actionable sales reports and gain insights for smarter decisions. ",
+                      "Certification & Real-World Readiness: Prepare for SAP SD certification while learning practical, job-ready skills. ",
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-teal-600 mt-1 flex-shrink-0" />
@@ -549,7 +549,7 @@ export default function SAPSDDetailsArea() {
                         key={inc.id}
                         className="flex items-center gap-3 text-gray-700"
                       >
-                        <Check className="w-5 h-5 text-theme-green flex-shrink-0" />
+                        <Check className="w-5 h-5 text-theme-teal flex-shrink-0" />
                         <span>{inc.inclusion_text}</span>
                       </div>
                     ))}
@@ -585,12 +585,12 @@ export default function SAPSDDetailsArea() {
                             </h4>
                           </div>
                           <span className="text-sm text-gray-500">
-                            {section.lessons.length} lessons
+                            {section.Modules.length} Modules
                           </span>
                         </button>
                         {expandedSections.has(section.id) && (
                           <div className="divide-y divide-gray-100">
-                            {section.lessons.map((lesson) => (
+                            {section.Modules.map((lesson) => (
                               <div
                                 key={lesson.id}
                                 className="px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
@@ -642,7 +642,7 @@ export default function SAPSDDetailsArea() {
                    
                     <div className="flex items-center gap-3 text-gray-700">
                       <LucideAward className="w-5 h-5 text-gray-400" />
-                      <span>{course.internship}</span>
+                      <span>{course.internship} Internship</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BarChart3 className="w-5 h-5 text-gray-400" />
@@ -650,7 +650,7 @@ export default function SAPSDDetailsArea() {
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.lessons_count} Lessons</span>
+                      <span>{course.Modules_count} Modules</span>
                     </div>
                   </div>
                 </div>

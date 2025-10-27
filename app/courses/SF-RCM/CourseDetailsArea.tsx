@@ -12,9 +12,12 @@ import {
   PhoneCall,
   Download,
   Share2,
+  Award,
+  CheckCircle,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
+import Image from "next/image";
 
 export default function SAPRCMDetails() {
     const [showModal, setShowModal] = useState(false);
@@ -31,12 +34,13 @@ export default function SAPRCMDetails() {
 
   const course = {
     title: "SAP SuccessFactors RCM (Recruiting Management)",
-    description:
-      "Master SAP SuccessFactors Recruiting Management (RCM) to streamline end-to-end hiring processes. Learn setup, job requisitions, candidate management, RMK, reports, integrations, security, advanced features, and hands-on exercises with real-time scenarios.",
-    price: 179.99,
-    duration: "12 Weeks",
-    level: "Intermediate",
-    lessons_count: 80,
+    description:"Manage the full recruiting lifecycle efficiently. SAP SuccessFactors RCM helps you handle job requisitions, candidate management, workflows, and analytics for smarter hiring.",
+    course_overview:"Master RCM to configure workflows, manage candidates, and integrate with Onboarding, EC, and LMS modules. Apply hands-on exercises simulating real recruitment processes. ",
+    course_duration: "3 Months Course",
+    internship:"3 Months",
+    course_enroll:"/Enroll-Now.png",
+    level: "Beginner to Advanced",
+    Modules_count: 12,
     students_count: 1200,
     rating: 4.7,
     reviews_count: 210,
@@ -53,7 +57,7 @@ export default function SAPRCMDetails() {
     {
       id: 1,
       section_title: "Module 1: Introduction to SAP RCM",
-      lessons: [
+      Modules: [
         "Overview of SAP SuccessFactors Talent Acquisition Suite (RCM, RMK, Onboarding)",
         "Role of RCM in the hiring process",
         "Key differences: RCM vs RMK vs RBP",
@@ -64,7 +68,7 @@ export default function SAPRCMDetails() {
     {
       id: 2,
       section_title: "Module 2: Recruiting Setup & Configuration",
-      lessons: [
+      Modules: [
         "Provisioning & Admin Center basics",
         "Recruiting permissions (Role-Based Permissions)",
         "Managing recruiting roles (Recruiter, Hiring Manager, Candidate, etc.)",
@@ -76,7 +80,7 @@ export default function SAPRCMDetails() {
     {
       id: 3,
       section_title: "Module 3: Job Requisition Management",
-      lessons: [
+      Modules: [
         "Job requisition creation process",
         "Approval workflows for requisitions",
         "Job fields, operators, and requisition templates",
@@ -88,7 +92,7 @@ export default function SAPRCMDetails() {
     {
       id: 4,
       section_title: "Module 4: Candidate Management",
-      lessons: [
+      Modules: [
         "Candidate application process",
         "Candidate profile & application templates",
         "Candidate pipelines & statuses",
@@ -100,7 +104,7 @@ export default function SAPRCMDetails() {
     {
       id: 5,
       section_title: "Module 5: Recruiting Templates & XML Customization",
-      lessons: [
+      Modules: [
         "Job requisition template XML configuration",
         "Candidate profile template XML",
         "Application template XML",
@@ -111,7 +115,7 @@ export default function SAPRCMDetails() {
     {
       id: 6,
       section_title: "Module 6: Offer Management",
-      lessons: [
+      Modules: [
         "Offer letter templates (standard & custom)",
         "Offer approval workflows",
         "Generating and extending offers",
@@ -123,7 +127,7 @@ export default function SAPRCMDetails() {
     {
       id: 7,
       section_title: "Module 7: Recruiting Marketing (RMK) & Career Site",
-      lessons: [
+      Modules: [
         "Basics of RMK (Recruiting Marketing)",
         "Career Site Builder (CSB) overview",
         "Setting up job postings on RMK",
@@ -135,7 +139,7 @@ export default function SAPRCMDetails() {
     {
       id: 8,
       section_title: "Module 8: Recruiting Reports & Analytics",
-      lessons: [
+      Modules: [
         "Standard recruiting reports",
         "Ad Hoc reporting for recruiting data",
         "Recruiting metrics & KPIs (time-to-fill, offer acceptance, candidate pipeline health)",
@@ -146,7 +150,7 @@ export default function SAPRCMDetails() {
     {
       id: 9,
       section_title: "Module 9: Integration with Other Modules",
-      lessons: [
+      Modules: [
         "RCM + Onboarding (candidate to employee flow)",
         "RCM + Employee Central (EC)",
         "RCM + Background checks (integration with third-party vendors)",
@@ -156,7 +160,7 @@ export default function SAPRCMDetails() {
     {
       id: 10,
       section_title: "Module 10: Security, Compliance & GDPR",
-      lessons: [
+      Modules: [
         "Role-Based Permissions (RBP) in Recruiting",
         "Data privacy & GDPR compliance",
         "Anonymization and purge rules for candidate data",
@@ -166,7 +170,7 @@ export default function SAPRCMDetails() {
     {
       id: 11,
       section_title: "Module 11: Advanced Recruiting Features",
-      lessons: [
+      Modules: [
         "Recruiting Posting (multi-channel job posting)",
         "Interview scheduling integrations (Outlook, MS Teams, Zoom)",
         "Talent Pools & Candidate Relationship Management (CRM in Recruiting)",
@@ -176,7 +180,7 @@ export default function SAPRCMDetails() {
     {
       id: 12,
       section_title: "Module 12: Real-Time Scenarios & Capstone Project",
-      lessons: [
+      Modules: [
         "End-to-End recruiting process: Job requisition → Posting → Candidate pipeline → Offer → Onboarding",
         "Industry-specific scenarios (IT hiring, campus recruitment, high-volume recruiting)",
         "Capstone Project: Configure a complete recruiting cycle for a sample company (job requisition, career site, candidate workflow, and offer process)",
@@ -200,7 +204,7 @@ export default function SAPRCMDetails() {
           <div className="lg:col-span-2">
             <div className="mb-8 p-10">
               <div className="mb-4">
-                <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-md">
+                <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 text-sm font-medium rounded-md">
                   {course.category}
                 </span>
               </div>
@@ -245,7 +249,7 @@ export default function SAPRCMDetails() {
                   onClick={() => setActiveTab("overview")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "overview"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -255,7 +259,7 @@ export default function SAPRCMDetails() {
                   onClick={() => setActiveTab("curriculum")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "curriculum"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -267,9 +271,9 @@ export default function SAPRCMDetails() {
             {activeTab === "overview" ? (
               <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{course.description}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">{course.course_overview}</p>
 
-                <h4 className="text-xl font-bold mb-4 mt-8">What You’ll Learn</h4>
+                <h4 className="text-xl font-bold mb-4 mt-8">What You&apos;ll Learn</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
                     "Master end-to-end recruiting management in SAP SuccessFactors",
@@ -280,7 +284,7 @@ export default function SAPRCMDetails() {
                     "Hands-on exercises and real-time scenario projects",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1" />
+                      <CheckCircle className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -307,11 +311,11 @@ export default function SAPRCMDetails() {
                           />
                           <h4 className="font-semibold text-gray-900">{section.section_title}</h4>
                         </div>
-                        <span className="text-sm text-gray-500">{section.lessons.length} lessons</span>
+                        <span className="text-sm text-gray-500">{section.Modules.length} Modules</span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <div className="divide-y divide-gray-100">
-                          {section.lessons.map((lesson, i) => (
+                          {section.Modules.map((lesson, i) => (
                             <div
                               key={i}
                               className="px-6 py-4 flex items-center gap-4 hover:bg-gray-50"
@@ -330,69 +334,84 @@ export default function SAPRCMDetails() {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="sticky top-8 w-auto p-10">
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
-                <div className="mb-6">
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <Clock className="w-5 h-5 text-gray-400" />
-                      <span>{course.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <BarChart3 className="w-5 h-5 text-gray-400" />
-                      <span>{course.level}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.lessons_count} Lessons</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
-                    <PhoneCall className="w-5 h-5" />
-                    Enroll Now
-                  </button>
-                  <button
-        className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-        onClick={() => setShowModal(true)}
-      >
-        <Download size={20} />
-        Download Syllabus
-      </button>
-
-      {showModal && (
-        <DownloadSyllabusModal
-          onClose={() => setShowModal(false)}
-          fileName="SF-RCM.pdf" // 👈 change this dynamically per course
-          displayName="SAP Sales & Distribution.pdf" // optional pretty name
-        />
-      )}
-                </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">This Course Includes:</h3>
-                <div className="space-y-3">
-                  {[
-                    "Lifetime access",
-                    "30-day money-back guarantee",
-                    "Downloadable resources",
-                    "Certificate of completion",
-                    "Access on mobile and desktop",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-gray-700">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                      <div className="sticky top-8">
+                        <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
+                          <div className="mb-6">
+                            <Image
+                              src={course.course_enroll}
+                              alt={course.title}
+                              width={1000}
+                              height={400}
+                              className="w-full h-60 object-cover rounded-lg"
+                            />
+                            <div className="space-y-3 mb-6 mt-4">
+                              <div className="flex items-center gap-3 text-gray-700">
+                                <Clock className="w-5 h-5 text-gray-400" />
+                                <span>{course.course_duration}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-700">
+                                <Award className="w-5 h-5 text-gray-400" />
+                                <span>{course.internship} Internship</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-700">
+                                <BarChart3 className="w-5 h-5 text-gray-400" />
+                                <span>{course.level}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-700">
+                                <BookOpen className="w-5 h-5 text-gray-400" />
+                                <span>{course.Modules_count} Modules</span>
+                              </div>
+                            </div>
+                          </div>
+          
+                          <div className="space-y-3">
+                            <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                              <PhoneCall className="w-5 h-5" />
+                              Enroll Now
+                            </button>
+                            <button
+                              className="bg-teal-600 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                              onClick={() => setShowModal(true)}
+                            >
+                              <Download size={20} />
+                              Download Syllabus
+                            </button>
+          
+                            {showModal && (
+                              <DownloadSyllabusModal
+                                onClose={() => setShowModal(false)}
+                                fileName="SAP-ABAP.pdf"
+                                displayName="SAP ABAP on HANA Course.pdf"
+                              />
+                            )}
+                          </div>
+                        </div>
+          
+                        <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
+                          <h3 className="text-lg font-bold text-gray-900 mb-4">
+                            This Course Includes:
+                          </h3>
+                          <div className="space-y-3">
+                            {[
+                              "Lifetime access",
+                              "Downloadable resources",
+                              "Certificate of completion",
+                              "Access on mobile and desktop",
+                            ].map((item, i) => (
+                              <div
+                                key={i}
+                                className="flex items-center gap-3 text-gray-700"
+                              >
+                                <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                                <span>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Share this course:</h3>
-                <button className="w-full border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <Share2 className="w-5 h-5" />
                   Share Course
                 </button>

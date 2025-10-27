@@ -139,8 +139,8 @@
    Tailwind Overrides / Utilities
 ========================================= */
 @layer utilities {
-  /* Add your theme-green background as utility */
-  .bg-theme-green { background-color: blue; }
-  .bg-theme-green-light { background-color: #E8F5E9; }
-  .text-theme-green { color: #5BBB7B; }
+  /* Add your theme-teal background as utility */
+  .bg-theme-teal { background-color: blue; }
+  .bg-theme-teal-light { background-color: #E8F5E9; }
+  .text-theme-teal { color: #5BBB7B; }
 }

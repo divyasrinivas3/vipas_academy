@@ -11,8 +11,7 @@ const courses = [
     category: 'SAP',
     instructor: 'John Smith',
     image: '/ONB.png',
-    students: 12450,
-    duration: '6 months',
+    course_duration: '6 months',
     level: 'Beginner',
     url: '/courses/onboarding-course', // static course page
   },
@@ -21,20 +20,18 @@ const courses = [
     category: 'SAP',
     instructor: 'Lisa Johnson',
     image: '/EC.png',
-    students: 9800,
-    duration: '6 months',
+    course_duration: '6 months',
     level: 'Intermediate',
     url: '/courses/SF-EC',
   },
   {
-    title: 'SAP SF PMGM',
+    title: 'SAP SF OFB',
     category: 'SAP',
     instructor: 'David Wilson',
-    image: '/PMGM.png',
-    students: 15000,
-    duration: '6 months',
+    image: '/OFB.png',
+    course_duration: '6 months',
     level: 'Advanced',
-    url: '/courses/SF-PMGM',
+    url: '/courses/SF-OFB',
   },
 ];
 
@@ -101,9 +98,8 @@ export default function RelatedCourses() {
     <div className="flex items-center justify-between text-gray-600 text-sm">
       <div className="flex items-center gap-2">
         <Clock className="w-4 h-4" />
-        <span>{course.duration}</span>
+        <span>{course.course_duration}</span>
       </div>
-      <span>{course.students.toLocaleString()} Students</span>
     </div>
   </div>
 </Link>

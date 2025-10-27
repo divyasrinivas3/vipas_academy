@@ -12,14 +12,19 @@ import {
   PhoneCall,
   Download,
   Share2,
+  Award,
+  CheckCircle,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
+import Image from "next/image";
 
 export default function SAPPMGMDetails() {
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
-  const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
+  const [expandedSections, setExpandedSections] = useState<Set<number>>(
+    new Set()
+  );
 
   const toggleSection = (sectionId: number) => {
     const newExpanded = new Set(expandedSections);
@@ -31,11 +36,13 @@ export default function SAPPMGMDetails() {
   const course = {
     title: "SAP SuccessFactors Performance & Goals Management (PMGM) Course",
     description:
-      "Master SAP SuccessFactors PMGM to configure goals, manage performance forms, implement 360 reviews, integrate with EC and Compensation, track analytics, and execute real-time scenarios with hands-on exercises.",
-    price: 159.99,
-    duration: "10 Weeks",
+      "Learn to set up goals, manage performance forms, implement 360-degree reviews, and track analytics for effective employee performance management. ",
+    course_overview:
+      "Master PMGM to configure goal plans, create performance forms, implement continuous performance processes, and integrate with EC and Compensation modules using real-world exercises. ",
+    course_duration: "3 Months Course",
+    internship: "3 Months",
     level: "Intermediate",
-    lessons_count: 60,
+    Modules_count: 10,
     students_count: 950,
     rating: 4.8,
     reviews_count: 140,
@@ -46,13 +53,14 @@ export default function SAPPMGMDetails() {
     instructor_title: "SAP Certified SuccessFactors Consultant",
     instructor_image:
       "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100",
+    course_enroll: "/Enroll-Now.png",
   };
 
   const curriculum = [
     {
       id: 1,
       section_title: "Module 1: Introduction to SAP SuccessFactors & PMGM",
-      lessons: [
+      Modules: [
         "Overview of SAP SuccessFactors suite",
         "Introduction to Performance & Goals (PMGM)",
         "Role of PMGM in talent management lifecycle",
@@ -63,7 +71,7 @@ export default function SAPPMGMDetails() {
     {
       id: 2,
       section_title: "Module 2: Goal Management (GM)",
-      lessons: [
+      Modules: [
         "Types of goals: SMART goals, Development goals, Cascading goals",
         "Goal Plan templates (XML-based configuration vs Admin Center setup)",
         "Goal libraries & goal categories",
@@ -75,7 +83,7 @@ export default function SAPPMGMDetails() {
     {
       id: 3,
       section_title: "Module 3: Performance Management (PM)",
-      lessons: [
+      Modules: [
         "Performance form components & templates",
         "Route maps (workflow for performance forms)",
         "Sections in PM forms: Goals, Competencies, Development Plans, Summary",
@@ -88,7 +96,7 @@ export default function SAPPMGMDetails() {
     {
       id: 4,
       section_title: "Module 4: Configuration Tools & XML Customization",
-      lessons: [
+      Modules: [
         "Introduction to Provisioning (backend access)",
         "XML configuration of Goal Plans & Performance Forms",
         "Using Admin Center for form template configuration",
@@ -99,7 +107,7 @@ export default function SAPPMGMDetails() {
     {
       id: 5,
       section_title: "Module 5: Advanced PMGM Features",
-      lessons: [
+      Modules: [
         "Calibration sessions (normalization of ratings across teams)",
         "Continuous Performance Management (real-time feedback, coaching)",
         "360-Degree Reviews (multi-rater feedback forms)",
@@ -111,7 +119,7 @@ export default function SAPPMGMDetails() {
     {
       id: 6,
       section_title: "Module 6: Reporting & Analytics",
-      lessons: [
+      Modules: [
         "Standard reports for PMGM (goal progress, performance ratings)",
         "Ad Hoc Reports in SuccessFactors",
         "People Analytics (Stories in SAP SuccessFactors)",
@@ -122,7 +130,7 @@ export default function SAPPMGMDetails() {
     {
       id: 7,
       section_title: "Module 7: Security & Permissions",
-      lessons: [
+      Modules: [
         "Role-Based Permissions (RBP) for PMGM",
         "Form permissions vs Goal permissions",
         "Manager/Employee/Admin roles in PMGM processes",
@@ -131,7 +139,7 @@ export default function SAPPMGMDetails() {
     {
       id: 8,
       section_title: "Module 8: Integration & Extensions",
-      lessons: [
+      Modules: [
         "Integration with SAP SuccessFactors Employee Central (EC)",
         "Integration with Compensation Management (merit, bonus calculations)",
         "Integration with Succession Planning (talent pools, nominations)",
@@ -141,7 +149,7 @@ export default function SAPPMGMDetails() {
     {
       id: 9,
       section_title: "Module 9: PMGM in SAP SuccessFactors Mobile",
-      lessons: [
+      Modules: [
         "Mobile capabilities for PMGM",
         "Goal updates via mobile",
         "Performance review on mobile",
@@ -150,7 +158,7 @@ export default function SAPPMGMDetails() {
     {
       id: 10,
       section_title: "Module 10: Real-Time Scenarios & Capstone Project",
-      lessons: [
+      Modules: [
         "End-to-End cycle: Goal setting → Performance form → Review → Calibration → Compensation linkage",
         "Industry-specific configurations (IT, manufacturing, BFSI, healthcare)",
         "Capstone Project: Configure a complete PMGM solution for a sample organization with 1000 employees",
@@ -174,7 +182,7 @@ export default function SAPPMGMDetails() {
           <div className="lg:col-span-2">
             <div className="mb-8 p-10">
               <div className="mb-4">
-                <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-md">
+                <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 text-sm font-medium rounded-md">
                   {course.category}
                 </span>
               </div>
@@ -199,7 +207,9 @@ export default function SAPPMGMDetails() {
                       />
                     ))}
                   </div>
-                  <span className="font-semibold text-gray-900">{course.rating}</span>
+                  <span className="font-semibold text-gray-900">
+                    {course.rating}
+                  </span>
                 </div>
               </div>
 
@@ -219,7 +229,7 @@ export default function SAPPMGMDetails() {
                   onClick={() => setActiveTab("overview")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "overview"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -229,7 +239,7 @@ export default function SAPPMGMDetails() {
                   onClick={() => setActiveTab("curriculum")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "curriculum"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -241,20 +251,24 @@ export default function SAPPMGMDetails() {
             {activeTab === "overview" ? (
               <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{course.description}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {course.course_overview}
+                </p>
 
-                <h4 className="text-xl font-bold mb-4 mt-8">What You’ll Learn</h4>
+                <h4 className="text-xl font-bold mb-4 mt-8">
+                  What You&apos;ll Learn
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    "Configure goal plans and cascading goals in PMGM",
-                    "Create and manage performance forms with templates and workflows",
-                    "Implement 360-degree reviews and continuous performance management",
-                    "Integrate PMGM with EC, Compensation, and Succession modules",
-                    "Build analytics and dashboards for performance tracking",
-                    "Execute hands-on capstone projects simulating real-world scenarios",
+                    "Configure goals and cascading objectives ",
+                    "Manage performance forms and workflows ",
+                    "Implement 360-degree reviews and continuous performance tracking ",
+                    "Integrate PMGM with EC, Compensation, and Succession ",
+                    "Build dashboards and analytics for performance monitoring ",
+                    "Execute capstone projects simulating real business scenarios ",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1" />
+                      <CheckCircle className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -262,7 +276,9 @@ export default function SAPPMGMDetails() {
               </div>
             ) : (
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Course Curriculum</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Course Curriculum
+                </h3>
                 <div className="space-y-4">
                   {curriculum.map((section) => (
                     <div
@@ -276,16 +292,22 @@ export default function SAPPMGMDetails() {
                         <div className="flex items-center gap-4">
                           <ChevronDown
                             className={`w-5 h-5 text-gray-600 transition-transform ${
-                              expandedSections.has(section.id) ? "rotate-180" : ""
+                              expandedSections.has(section.id)
+                                ? "rotate-180"
+                                : ""
                             }`}
                           />
-                          <h4 className="font-semibold text-gray-900">{section.section_title}</h4>
+                          <h4 className="font-semibold text-gray-900">
+                            {section.section_title}
+                          </h4>
                         </div>
-                        <span className="text-sm text-gray-500">{section.lessons.length} lessons</span>
+                        <span className="text-sm text-gray-500">
+                          {section.Modules.length} Modules
+                        </span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <div className="divide-y divide-gray-100">
-                          {section.lessons.map((lesson, i) => (
+                          {section.Modules.map((lesson, i) => (
                             <div
                               key={i}
                               className="px-6 py-4 flex items-center gap-4 hover:bg-gray-50"
@@ -305,13 +327,24 @@ export default function SAPPMGMDetails() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-8 w-auto p-10">
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
+            <div className="sticky top-8">
+              <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
                 <div className="mb-6">
-                  <div className="space-y-3 mb-6">
+                  <Image
+                    src={course.course_enroll}
+                    alt={course.title}
+                    width={1000}
+                    height={400}
+                    className="w-full h-60 object-cover rounded-lg"
+                  />
+                  <div className="space-y-3 mb-6 mt-4">
                     <div className="flex items-center gap-3 text-gray-700">
                       <Clock className="w-5 h-5 text-gray-400" />
-                      <span>{course.duration}</span>
+                      <span>{course.course_duration}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <Award className="w-5 h-5 text-gray-400" />
+                      <span>{course.internship} Internship</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BarChart3 className="w-5 h-5 text-gray-400" />
@@ -319,36 +352,38 @@ export default function SAPPMGMDetails() {
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.lessons_count} Lessons</span>
+                      <span>{course.Modules_count} Modules</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
                   <button
-        className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-        onClick={() => setShowModal(true)}
-      >
-        <Download size={20} />
-        Download Syllabus
-      </button>
+                    className="bg-teal-600 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                    onClick={() => setShowModal(true)}
+                  >
+                    <Download size={20} />
+                    Download Syllabus
+                  </button>
 
-      {showModal && (
-        <DownloadSyllabusModal
-          onClose={() => setShowModal(false)}
-          fileName="SF-PMGM.pdf" // 👈 change this dynamically per course
-          displayName="SF_PMGM Course.pdf" // optional pretty name
-        />
-      )}
+                  {showModal && (
+                    <DownloadSyllabusModal
+                      onClose={() => setShowModal(false)}
+                      fileName="SAP-ABAP.pdf"
+                      displayName="SAP ABAP on HANA Course.pdf"
+                    />
+                  )}
                 </div>
               </div>
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">This Course Includes:</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  This Course Includes:
+                </h3>
                 <div className="space-y-3">
                   {[
                     "Lifetime access",
@@ -357,17 +392,21 @@ export default function SAPPMGMDetails() {
                     "Certificate of completion",
                     "Access on mobile and desktop",
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-gray-700">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 text-gray-700"
+                    >
+                      <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
-
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Share this course:</h3>
-                <button className="w-full border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  Share this course:
+                </h3>
+                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <Share2 className="w-5 h-5" />
                   Share Course
                 </button>

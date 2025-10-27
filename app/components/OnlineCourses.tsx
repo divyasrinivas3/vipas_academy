@@ -18,7 +18,7 @@ const courses = [
     instructor: "John Smith",
     image: "/SD.png",
     students: 12450,
-    duration: "6 months",
+    course_duration: "6 months",
     level: "Beginner",
     url: "/courses/sales-distribution", 
   },
@@ -28,7 +28,7 @@ const courses = [
     instructor: "Lisa Johnson",
     image: "/data-analytics.jpg",
     students: 9800,
-    duration: "6 months",
+    course_duration: "6 months",
     level: "Intermediate",
     url: "/courses/data-analytics",
   },
@@ -38,7 +38,7 @@ const courses = [
     instructor: "David Wilson",
     image: "/fullstack-development.jpg",
     students: 15000,
-    duration: "6 months",
+    course_duration: "6 months",
     level: "Advanced",
     url: "/courses/fullstack-development",
   },
@@ -116,7 +116,7 @@ export default function PopularCourses() {
                   <div className="flex items-center justify-between text-gray-600 text-sm">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
-                      <span>{course.duration}</span>
+                      <span>{course.course_duration}</span>
                     </div>
                     <span>{course.students.toLocaleString()} Students</span>
                   </div>

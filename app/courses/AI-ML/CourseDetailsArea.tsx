@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
-
+import Image from "next/image";
 interface Lesson {
   id: string;
   lesson_title: string;
@@ -27,7 +27,7 @@ interface CurriculumSection {
   id: string;
   section_title: string;
   section_order: number;
-  lessons: Lesson[];
+  Modules: Lesson[];
 }
 
 interface Inclusion {
@@ -40,9 +40,9 @@ interface Course {
   title: string;
   description: string;
   price: number;
-  duration: string;
+  course_duration: string;
   level: string;
-  lessons_count: number;
+  Modules_count: number;
   students_count: number;
   rating: number;
   reviews_count: number;
@@ -65,9 +65,9 @@ export default function AIMLDetailsArea() {
     description:
       "Master Artificial Intelligence and Machine Learning from scratch — covering Python, Data Science, Deep Learning, NLP, and MLOps with practical projects and deployment training.",
     price: 299,
-    duration: "60h 45m",
+    course_duration: "60h 45m",
     level: "Beginner to Advanced",
-    lessons_count: 200,
+    Modules_count: 200,
     students_count: 1890,
     rating: 4.9,
     reviews_count: 340,
@@ -82,7 +82,7 @@ export default function AIMLDetailsArea() {
   };
 
   const inclusions: Inclusion[] = [
-    { id: "i1", inclusion_text: "Lifetime access to recorded video lessons" },
+    { id: "i1", inclusion_text: "Lifetime access to recorded video Modules" },
     { id: "i2", inclusion_text: "Downloadable Python notebooks & datasets" },
     { id: "i3", inclusion_text: "Certificate of completion" },
     { id: "i4", inclusion_text: "Hands-on projects and assignments" },
@@ -95,7 +95,7 @@ export default function AIMLDetailsArea() {
       id: "mod1",
       section_title: "Module 1: Introduction to AI & Machine Learning",
       section_order: 1,
-      lessons: [
+      Modules: [
         { id: "l1", lesson_title: "What is Artificial Intelligence?", lesson_order: 1 },
         { id: "l2", lesson_title: "Real-world applications of AI", lesson_order: 2 },
         { id: "l3", lesson_title: "History and evolution of Machine Learning", lesson_order: 3 },
@@ -107,7 +107,7 @@ export default function AIMLDetailsArea() {
       id: "mod2",
       section_title: "Module 2: Python for AI/ML",
       section_order: 2,
-      lessons: [
+      Modules: [
         { id: "l6", lesson_title: "Introduction to Python programming", lesson_order: 1 },
         { id: "l7", lesson_title: "Data types, variables, and loops", lesson_order: 2 },
         { id: "l8", lesson_title: "Functions, modules, and libraries", lesson_order: 3 },
@@ -119,7 +119,7 @@ export default function AIMLDetailsArea() {
       id: "mod3",
       section_title: "Module 3: Mathematics for Machine Learning",
       section_order: 3,
-      lessons: [
+      Modules: [
         { id: "l11", lesson_title: "Linear Algebra essentials (vectors, matrices, operations)", lesson_order: 1 },
         { id: "l12", lesson_title: "Probability & Statistics (mean, variance, distributions)", lesson_order: 2 },
         { id: "l13", lesson_title: "Calculus for optimization (gradients, derivatives)", lesson_order: 3 },
@@ -130,7 +130,7 @@ export default function AIMLDetailsArea() {
       id: "mod4",
       section_title: "Module 4: Data Pre-processing & Feature Engineering",
       section_order: 4,
-      lessons: [
+      Modules: [
         { id: "l15", lesson_title: "Data collection and cleaning", lesson_order: 1 },
         { id: "l16", lesson_title: "Handling missing data and outliers", lesson_order: 2 },
         { id: "l17", lesson_title: "Feature scaling, encoding, and transformation", lesson_order: 3 },
@@ -142,7 +142,7 @@ export default function AIMLDetailsArea() {
       id: "mod5",
       section_title: "Module 5: Supervised Learning",
       section_order: 5,
-      lessons: [
+      Modules: [
         { id: "l20", lesson_title: "Linear & Logistic Regression", lesson_order: 1 },
         { id: "l21", lesson_title: "Decision Trees & Random Forests", lesson_order: 2 },
         { id: "l22", lesson_title: "K-Nearest Neighbors (KNN)", lesson_order: 3 },
@@ -154,7 +154,7 @@ export default function AIMLDetailsArea() {
       id: "mod6",
       section_title: "Module 6: Unsupervised Learning",
       section_order: 6,
-      lessons: [
+      Modules: [
         { id: "l25", lesson_title: "Clustering algorithms (K-Means, Hierarchical, DBSCAN)", lesson_order: 1 },
         { id: "l26", lesson_title: "Dimensionality reduction (PCA, t-SNE)", lesson_order: 2 },
         { id: "l27", lesson_title: "Association rule learning (Apriori, Eclat)", lesson_order: 3 },
@@ -165,7 +165,7 @@ export default function AIMLDetailsArea() {
       id: "mod7",
       section_title: "Module 7: Deep Learning",
       section_order: 7,
-      lessons: [
+      Modules: [
         { id: "l29", lesson_title: "Introduction to Neural Networks", lesson_order: 1 },
         { id: "l30", lesson_title: "Activation functions, loss functions, and backpropagation", lesson_order: 2 },
         { id: "l31", lesson_title: "Building models using TensorFlow or PyTorch", lesson_order: 3 },
@@ -177,7 +177,7 @@ export default function AIMLDetailsArea() {
       id: "mod8",
       section_title: "Module 8: Natural Language Processing (NLP)",
       section_order: 8,
-      lessons: [
+      Modules: [
         { id: "l34", lesson_title: "Text preprocessing (tokenization, stemming, lemmatization)", lesson_order: 1 },
         { id: "l35", lesson_title: "Bag of Words, TF-IDF, and Word Embeddings", lesson_order: 2 },
         { id: "l36", lesson_title: "Sentiment Analysis and Text Classification", lesson_order: 3 },
@@ -188,7 +188,7 @@ export default function AIMLDetailsArea() {
       id: "mod9",
       section_title: "Module 9: Model Deployment & MLOps",
       section_order: 9,
-      lessons: [
+      Modules: [
         { id: "l38", lesson_title: "Model saving and versioning", lesson_order: 1 },
         { id: "l39", lesson_title: "REST API deployment using Flask or FastAPI", lesson_order: 2 },
         { id: "l40", lesson_title: "Introduction to MLOps pipelines (CI/CD for ML)", lesson_order: 3 },
@@ -199,7 +199,7 @@ export default function AIMLDetailsArea() {
       id: "mod10",
       section_title: "Module 10: Capstone Projects & Case Studies",
       section_order: 10,
-      lessons: [
+      Modules: [
         { id: "l42", lesson_title: "Predictive Analytics (sales, demand, or churn prediction)", lesson_order: 1 },
         { id: "l43", lesson_title: "Image Classification using CNNs", lesson_order: 2 },
         { id: "l44", lesson_title: "Sentiment Analysis on social media data", lesson_order: 3 },
@@ -232,7 +232,7 @@ export default function AIMLDetailsArea() {
                 {/* Course Header */}
                 <div className="mb-8">
                   <div className="mb-4">
-                    <span className="inline-block px-4 py-1.5 bg-theme-green-light text-theme-green text-sm font-medium rounded-md">
+                    <span className="inline-block px-4 py-1.5 bg-theme-teal-light text-theme-teal text-sm font-medium rounded-md">
                       {course.category}
                     </span>
                   </div>
@@ -261,7 +261,7 @@ export default function AIMLDetailsArea() {
     
                   {/* Instructor */}
                   <div className="flex items-center gap-4 mb-8">
-                    <img src={course.instructor_image} alt={course.instructor_name} className="w-12 h-12 rounded-full object-cover" />
+                    <Image src={course.instructor_image} alt={course.instructor_name} width={1000} height={400} className="w-12 h-12 rounded-full object-cover" />
                     <div>
                       <p className="text-gray-900 font-semibold">{course.instructor_name}</p>
                       <p className="text-gray-500 text-sm">{course.instructor_title}</p>
@@ -270,7 +270,7 @@ export default function AIMLDetailsArea() {
     
                   {/* Course Image */}
                   <div className="mb-8 rounded-2xl overflow-hidden">
-                    <img src={course.image_url} alt={course.title} className="w-full h-96 object-cover" />
+                    <Image src={course.image_url} alt={course.title} width={1000} height={400} className="w-full h-96 object-cover" />
                   </div>
                 </div>
     
@@ -280,20 +280,20 @@ export default function AIMLDetailsArea() {
                     <button
                       onClick={() => setActiveTab("overview")}
                       className={`pb-4 px-2 font-semibold text-base transition-colors relative ${
-                        activeTab === "overview" ? "text-theme-green" : "text-gray-500 hover:text-gray-700"
+                        activeTab === "overview" ? "text-theme-teal" : "text-gray-500 hover:text-gray-700"
                       }`}
                     >
                       Course Info
-                      {activeTab === "overview" && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-theme-green"></div>}
+                      {activeTab === "overview" && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-theme-teal"></div>}
                     </button>
                     <button
                       onClick={() => setActiveTab("curriculum")}
                       className={`pb-4 px-2 font-semibold text-base transition-colors relative ${
-                        activeTab === "curriculum" ? "text-theme-green" : "text-gray-500 hover:text-gray-700"
+                        activeTab === "curriculum" ? "text-theme-teal" : "text-gray-500 hover:text-gray-700"
                       }`}
                     >
                       Curriculum
-                      {activeTab === "curriculum" && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-theme-green"></div>}
+                      {activeTab === "curriculum" && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-theme-teal"></div>}
                     </button>
                   </div>
                 </div>
@@ -316,7 +316,7 @@ export default function AIMLDetailsArea() {
                           "Prepare for SAP MM certification and practical job scenarios.",
                         ].map((item, index) => (
                           <div key={index} className="flex items-start gap-3">
-                            <Check className="w-5 h-5 text-theme-green mt-1 flex-shrink-0" />
+                            <Check className="w-5 h-5 text-theme-teal mt-1 flex-shrink-0" />
                             <span className="text-gray-700">{item}</span>
                           </div>
                         ))}
@@ -326,7 +326,7 @@ export default function AIMLDetailsArea() {
                       <div className="space-y-3">
                         {inclusions.map((inc) => (
                           <div key={inc.id} className="flex items-center gap-3 text-gray-700">
-                            <Check className="w-5 h-5 text-theme-green flex-shrink-0" />
+                            <Check className="w-5 h-5 text-theme-teal flex-shrink-0" />
                             <span>{inc.inclusion_text}</span>
                           </div>
                         ))}
@@ -352,11 +352,11 @@ export default function AIMLDetailsArea() {
                                 />
                                 <h4 className="font-semibold text-gray-900 text-left">{section.section_title}</h4>
                               </div>
-                              <span className="text-sm text-gray-500">{section.lessons.length} lessons</span>
+                              <span className="text-sm text-gray-500">{section.Modules.length} Modules</span>
                             </button>
                             {expandedSections.has(section.id) && (
                               <div className="divide-y divide-gray-100">
-                                {section.lessons.map((lesson) => (
+                                {section.Modules.map((lesson) => (
                                   <div key={lesson.id} className="px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
                                     <div className="flex items-center gap-4">
                                       <Play className="w-4 h-4 text-gray-400" />
@@ -387,7 +387,7 @@ export default function AIMLDetailsArea() {
                       <div className="space-y-3 mb-6">
                         <div className="flex items-center gap-3 text-gray-700">
                           <Clock className="w-5 h-5 text-gray-400" />
-                          <span>{course.duration}</span>
+                          <span>{course.course_duration}</span>
                         </div>
                         <div className="flex items-center gap-3 text-gray-700">
                           <BarChart3 className="w-5 h-5 text-gray-400" />
@@ -395,13 +395,13 @@ export default function AIMLDetailsArea() {
                         </div>
                         <div className="flex items-center gap-3 text-gray-700">
                           <BookOpen className="w-5 h-5 text-gray-400" />
-                          <span>{course.lessons_count} Lessons</span>
+                          <span>{course.Modules_count} Modules</span>
                         </div>
                       </div>
                     </div>
     
                     <div className="space-y-3">
-                      <button className="w-full bg-theme-green hover:bg-green-600 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                      <button className="w-full bg-theme-teal hover:bg-teal-600 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
                         <PhoneCall className="w-5 h-5" />
                        Enroll Now
                       </button>
@@ -426,7 +426,7 @@ export default function AIMLDetailsArea() {
                   {/* Share Course */}
                   <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                     <h3 className="text-lg font-bold text-gray-900 mb-4">Share this course:</h3>
-                    <button className="w-full border-2 border-gray-300 hover:border-theme-green text-gray-700 hover:text-theme-green font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+                    <button className="w-full border-2 border-gray-300 hover:border-theme-teal text-gray-700 hover:text-theme-teal font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
                       <Share2 className="w-5 h-5" />
                       Share Course
                     </button>

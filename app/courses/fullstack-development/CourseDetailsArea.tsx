@@ -33,9 +33,9 @@ export default function FullStackCourseDetails() {
     description:
       "Become a professional Full Stack Developer. Learn HTML, CSS, JavaScript, React, Node.js, Express, SQL/NoSQL databases, REST APIs, and deploy real-world full-stack projects.",
     price: 199.99,
-    duration: "9 Weeks",
+    course_duration: "9 Weeks",
     level: "Beginner to Advanced",
-    lessons_count: 80,
+    Modules_count: 80,
     students_count: 1800,
     rating: 4.9,
     reviews_count: 250,
@@ -52,7 +52,7 @@ export default function FullStackCourseDetails() {
     {
       id: 1,
       section_title: "Module 1: Web Development Fundamentals",
-      lessons: [
+      Modules: [
         "Internet basics: Client–Server architecture, HTTP/HTTPS, APIs",
         "How the web works (DNS, hosting, browsers)",
         "Git & GitHub (version control basics)",
@@ -63,7 +63,7 @@ export default function FullStackCourseDetails() {
     {
       id: 2,
       section_title: "Module 2: Frontend Development – Core",
-      lessons: [
+      Modules: [
         "HTML5: Semantic tags, forms, media",
         "CSS3: Selectors, box model, flexbox, grid, transitions/animations",
         "JavaScript (ES6+): Variables, functions, loops, arrays, objects",
@@ -75,7 +75,7 @@ export default function FullStackCourseDetails() {
     {
       id: 3,
       section_title: "Module 3: Frontend Development – Advanced",
-      lessons: [
+      Modules: [
         "Responsive Design: Media queries, Bootstrap/Tailwind CSS",
         "Modern JS Framework: React (Components, props, state)",
         "Hooks (useState, useEffect, useContext)",
@@ -88,7 +88,7 @@ export default function FullStackCourseDetails() {
     {
       id: 4,
       section_title: "Module 4: Backend Development – Core",
-      lessons: [
+      Modules: [
         "Node.js: Basics, modules, npm, event loop",
         "Express.js: Routing, middleware, Handling requests/responses, RESTful APIs",
         "Authentication & Authorization: Sessions, JWT",
@@ -99,7 +99,7 @@ export default function FullStackCourseDetails() {
     {
       id: 5,
       section_title: "Module 5: Databases",
-      lessons: [
+      Modules: [
         "Relational DB (SQL – MySQL/PostgreSQL): Tables, joins, CRUD, indexing",
         "NoSQL DB (MongoDB): Documents, collections, aggregation",
         "ORM/ODM: Sequelize (SQL) / Mongoose (MongoDB)",
@@ -109,7 +109,7 @@ export default function FullStackCourseDetails() {
     {
       id: 6,
       section_title: "Module 6: Full Stack Integration",
-      lessons: [
+      Modules: [
         "Connecting frontend (React) with backend (Express + Node)",
         "Fetching & sending data via REST APIs",
         "MVC architecture in projects",
@@ -121,7 +121,7 @@ export default function FullStackCourseDetails() {
     {
       id: 7,
       section_title: "Module 7: Deployment & DevOps Basics",
-      lessons: [
+      Modules: [
         "Hosting frontend (Netlify, Vercel)",
         "Hosting backend (Heroku, Render, Railway, AWS)",
         "Databases in cloud (MongoDB Atlas, AWS RDS)",
@@ -133,7 +133,7 @@ export default function FullStackCourseDetails() {
     {
       id: 8,
       section_title: "Module 8: Advanced Topics",
-      lessons: [
+      Modules: [
         "GraphQL (Apollo, queries, mutations)",
         "Microservices architecture basics",
         "Testing: Jest, Mocha, Cypress",
@@ -144,7 +144,7 @@ export default function FullStackCourseDetails() {
     {
       id: 9,
       section_title: "Module 9: Project",
-      lessons: [
+      Modules: [
         "Build a complete production-level full stack app (e.g., E-commerce, social media, Project Management Tool)",
         "Features: authentication, CRUD, payments (Stripe/PayPal), deployment",
         "Document the project in GitHub with README & API docs",
@@ -274,11 +274,11 @@ export default function FullStackCourseDetails() {
                           />
                           <h4 className="font-semibold text-gray-900">{section.section_title}</h4>
                         </div>
-                        <span className="text-sm text-gray-500">{section.lessons.length} lessons</span>
+                        <span className="text-sm text-gray-500">{section.Modules.length} Modules</span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <ul className="px-6 py-4 space-y-2 bg-white">
-                          {section.lessons.map((lesson, i) => (
+                          {section.Modules.map((lesson, i) => (
                             <li key={i} className="flex items-center gap-2 text-gray-700">
                               {lesson.includes("📌") ? (
                                 <Play className="w-4 h-4 text-blue-600 flex-shrink-0" />
@@ -313,12 +313,12 @@ export default function FullStackCourseDetails() {
                 </div>
                 <div className="flex items-center gap-3 text-gray-700">
                   <BookOpen className="w-5 h-5 text-gray-400" />
-                  <span>{course.lessons_count} Lessons</span>
+                  <span>{course.Modules_count} Modules</span>
                 </div>
               </div>
 
               <div className="space-y-3 mt-4">
-                <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <PhoneCall className="w-5 h-5" />
                   Enroll Now
                 </button>

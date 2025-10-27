@@ -10,8 +10,8 @@ const FIORICourse = () => {
   return (
     <>
       <Navbar />
-      <MarqueeOne style_2={true} />
       <SAPFioriDetails />         {/* SAP SD content */}
+      <MarqueeOne style_2={true} />
       <RelatedCourses />
       <Footer />
     </>

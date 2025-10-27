@@ -11,7 +11,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
         <div key={index} className="flex items-center">
           {index > 0 && <ChevronRight className="w-4 h-4 mx-2 text-gray-400" />}
           {item.href ? (
-            <a href={item.href} className="text-gray-600 hover:text-theme-green transition-colors">
+            <a href={item.href} className="text-gray-600 hover:text-theme-teal transition-colors">
               {item.label}
             </a>
           ) : (

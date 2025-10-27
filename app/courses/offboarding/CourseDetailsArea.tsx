@@ -33,9 +33,9 @@ export default function SAPOFBDetails() {
     description:
       "Master SAP SuccessFactors Offboarding (OFB) to efficiently manage employee exits. Learn configuration, workflows, reporting, advanced setups, and hands-on case studies with real-time scenarios.",
     price: 149.99,
-    duration: "8 Weeks",
+    course_duration: "8 Weeks",
     level: "Intermediate",
-    lessons_count: 50,
+    Modules_count: 50,
     students_count: 900,
     rating: 4.6,
     reviews_count: 120,
@@ -52,7 +52,7 @@ export default function SAPOFBDetails() {
     {
       id: 1,
       section_title: "Module 1: Introduction to Offboarding",
-      lessons: [
+      Modules: [
         "Importance of Structured Offboarding",
         "Impact on Employer Branding & Knowledge Transfer",
         "Key Differences: Onboarding vs Offboarding",
@@ -61,7 +61,7 @@ export default function SAPOFBDetails() {
     {
       id: 2,
       section_title: "Module 2: Architecture & Features",
-      lessons: [
+      Modules: [
         "Offboarding Process Flow in SuccessFactors",
         "Roles Involved: HR Admin, Manager, Employee, IT/Facilities",
         "Security & RBP Setup",
@@ -70,7 +70,7 @@ export default function SAPOFBDetails() {
     {
       id: 3,
       section_title: "Module 3: Configuration of Offboarding",
-      lessons: [
+      Modules: [
         "Enabling Offboarding in Provisioning & Admin Center",
         "Setting up Offboarding Tasks (e.g., Knowledge Transfer, Exit Surveys, Asset Return)",
         "Workflow Configurations (Approvals, Notifications)",
@@ -80,7 +80,7 @@ export default function SAPOFBDetails() {
     {
       id: 4,
       section_title: "Module 4: Process Walkthrough",
-      lessons: [
+      Modules: [
         "Employee Resignation/Termination Event → Offboarding Trigger",
         "Manager Tasks (Knowledge Transfer, Clearance)",
         "Employee Tasks (Exit Forms, Surveys)",
@@ -90,7 +90,7 @@ export default function SAPOFBDetails() {
     {
       id: 5,
       section_title: "Module 5: Advanced Configurations",
-      lessons: [
+      Modules: [
         "Custom Offboarding Tasks & Checklists",
         "Business Rules for Offboarding",
         "Integration with Payroll (Final Settlement)",
@@ -100,7 +100,7 @@ export default function SAPOFBDetails() {
     {
       id: 6,
       section_title: "Module 6: Reporting & Analytics",
-      lessons: [
+      Modules: [
         "Standard Reports for Offboarding",
         "Exit Survey Analytics",
         "Attrition Trends & Insights",
@@ -110,7 +110,7 @@ export default function SAPOFBDetails() {
     {
       id: 7,
       section_title: "Module 7: Administration & Troubleshooting",
-      lessons: [
+      Modules: [
         "Admin Tools for Offboarding",
         "Common Errors & Fixes (Termination Sync, Task Assignments)",
         "Notifications & Approvals Issues",
@@ -119,7 +119,7 @@ export default function SAPOFBDetails() {
     {
       id: 8,
       section_title: "Module 8: Case Studies & Best Practices",
-      lessons: [
+      Modules: [
         "End-to-End Offboarding Case Study (Resignation → Clearance → Exit)",
         "Best Practices for Smooth Employee Exit Experience",
         "Legal & Compliance Considerations",
@@ -128,7 +128,7 @@ export default function SAPOFBDetails() {
     {
       id: 9,
       section_title: "Module 9: Hands-On & Certification Prep",
-      lessons: [
+      Modules: [
         "Hands-On Workshop in Demo System",
         "Configuring Complete Offboarding Process",
         "Exit Interview & Survey Setup",
@@ -153,7 +153,7 @@ export default function SAPOFBDetails() {
           <div className="lg:col-span-2">
             <div className="mb-8 p-10">
               <div className="mb-4">
-                <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-md">
+                <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 text-sm font-medium rounded-md">
                   {course.category}
                 </span>
               </div>
@@ -198,7 +198,7 @@ export default function SAPOFBDetails() {
                   onClick={() => setActiveTab("overview")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "overview"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-700 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -208,7 +208,7 @@ export default function SAPOFBDetails() {
                   onClick={() => setActiveTab("curriculum")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "curriculum"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -233,7 +233,7 @@ export default function SAPOFBDetails() {
                     "Hands-on practice and certification preparation",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1" />
+                      <Check className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -260,11 +260,11 @@ export default function SAPOFBDetails() {
                           />
                           <h4 className="font-semibold text-gray-900">{section.section_title}</h4>
                         </div>
-                        <span className="text-sm text-gray-500">{section.lessons.length} lessons</span>
+                        <span className="text-sm text-gray-500">{section.Modules.length} Modules</span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <div className="divide-y divide-gray-100">
-                          {section.lessons.map((lesson, i) => (
+                          {section.Modules.map((lesson, i) => (
                             <div
                               key={i}
                               className="px-6 py-4 flex items-center gap-4 hover:bg-gray-50"
@@ -290,7 +290,7 @@ export default function SAPOFBDetails() {
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-3 text-gray-700">
                       <Clock className="w-5 h-5 text-gray-400" />
-                      <span>{course.duration}</span>
+                      <span>{course.course_duration}</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BarChart3 className="w-5 h-5 text-gray-400" />
@@ -298,13 +298,13 @@ export default function SAPOFBDetails() {
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.lessons_count} Lessons</span>
+                      <span>{course.Modules_count} Modules</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
@@ -337,7 +337,7 @@ export default function SAPOFBDetails() {
                     "Access on mobile and desktop",
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 text-gray-700">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -346,7 +346,7 @@ export default function SAPOFBDetails() {
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Share this course:</h3>
-                <button className="w-full border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <Share2 className="w-5 h-5" />
                   Share Course
                 </button>

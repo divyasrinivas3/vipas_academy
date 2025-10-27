@@ -123,7 +123,7 @@ export default function Testimonials() {
                 exit="exit"
                 transition={{
                   x: { type: 'spring', stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
+                  opacity: { course_duration: 0.2 },
                 }}
                 className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl"
               >

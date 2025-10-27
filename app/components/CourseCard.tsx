@@ -40,7 +40,7 @@ export default function CourseCard({ course }: { course: Course }) {
         <div className="flex items-center justify-between text-gray-600 text-sm mb-5">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />
-            <span>{course.duration}</span>
+            <span>{course.course_duration}</span>
           </div>
           <div className="flex items-center gap-2">
             

@@ -15,8 +15,8 @@ const config: Config = {
         sora: ['Sora', 'sans-serif'],
       },
       colors: {
-        'theme-green': '#5BBB7B',
-        'theme-green-light': '#E8F5E9',
+        'theme-teal': '#5BBB7B',
+        'theme-teal-light': '#E8F5E9',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

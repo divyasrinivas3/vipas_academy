@@ -63,7 +63,7 @@ export default function SapOverview() {
                 <p className="text-sm text-gray-900 mt-5">Hands-On SAP Projects</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-2">
                   <Layers className="w-6 h-6 text-teal-600" />
                 </div>
                 <p className="text-sm text-gray-900 mt-5">Industry-Oriented Learning</p>

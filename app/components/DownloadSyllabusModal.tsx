@@ -92,7 +92,7 @@ export default function DownloadSyllabusModal({
             />
             <button
               onClick={handleVerifyOtp}
-              className="bg-green-600 text-white w-full py-2 rounded-md font-semibold"
+              className="bg-teal-600 text-white w-full py-2 rounded-md font-semibold"
             >
               Verify & Download
             </button>
@@ -100,7 +100,7 @@ export default function DownloadSyllabusModal({
         )}
 
         {step === "done" && (
-          <p className="text-center text-green-600 font-semibold">
+          <p className="text-center text-teal-600 font-semibold">
             ✅ OTP Verified! Downloading syllabus...
           </p>
         )}

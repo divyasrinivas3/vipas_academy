@@ -33,9 +33,9 @@ export default function SAPONBDetails() {
     description:
       "Master SAP SuccessFactors Onboarding 2.0 to enhance new hire experiences. Learn architecture, configuration, workflows, integrations, reporting, and hands-on practice with real-time scenarios.",
     price: 159.99,
-    duration: "10 Weeks",
+    course_duration: "10 Weeks",
     level: "Intermediate",
-    lessons_count: 60,
+    Modules_count: 60,
     students_count: 1000,
     rating: 4.8,
     reviews_count: 150,
@@ -52,7 +52,7 @@ export default function SAPONBDetails() {
     {
       id: 1,
       section_title: "Module 1: Introduction to Onboarding 2.0",
-      lessons: [
+      Modules: [
         "Overview of SuccessFactors HXM Suite",
         "Evolution from Onboarding 1.0 to Onboarding 2.0",
         "Role of Onboarding in Employee Lifecycle",
@@ -62,7 +62,7 @@ export default function SAPONBDetails() {
     {
       id: 2,
       section_title: "Module 2: Architecture & Key Features",
-      lessons: [
+      Modules: [
         "Onboarding 2.0 Architecture & Data Flow",
         "Core Capabilities (New Hire Portal, NHDR, Compliance, E-Signatures)",
         "Integration with Recruiting & Employee Central",
@@ -71,7 +71,7 @@ export default function SAPONBDetails() {
     {
       id: 3,
       section_title: "Module 3: System Configuration",
-      lessons: [
+      Modules: [
         "Provisioning Setup for Onboarding 2.0",
         "Role-Based Permissions (RBP) for Onboarding",
         "Configuring New Hire Data Review (NHDR)",
@@ -82,7 +82,7 @@ export default function SAPONBDetails() {
     {
       id: 4,
       section_title: "Module 4: Onboarding Process Walkthrough",
-      lessons: [
+      Modules: [
         "Pre-Day One Activities",
         "Hiring Manager Dashboard & Tasks",
         "New Hire Portal Experience (branding, customization)",
@@ -93,7 +93,7 @@ export default function SAPONBDetails() {
     {
       id: 5,
       section_title: "Module 5: Advanced Configurations",
-      lessons: [
+      Modules: [
         "Custom Data Collection Steps",
         "Configuring Business Rules in Onboarding",
         "Custom Tiles & Branding for Portal",
@@ -103,7 +103,7 @@ export default function SAPONBDetails() {
     {
       id: 6,
       section_title: "Module 6: Cross-Module Integrations",
-      lessons: [
+      Modules: [
         "Integration with Recruiting → Onboarding",
         "Integration with Employee Central (data sync)",
         "Integration with Payroll & Benefits",
@@ -113,7 +113,7 @@ export default function SAPONBDetails() {
     {
       id: 7,
       section_title: "Module 7: Reporting & Analytics",
-      lessons: [
+      Modules: [
         "Standard Reports for Onboarding",
         "Story Reports in People Analytics",
         "Monitoring New Hire Engagement",
@@ -123,7 +123,7 @@ export default function SAPONBDetails() {
     {
       id: 8,
       section_title: "Module 8: Administration & Troubleshooting",
-      lessons: [
+      Modules: [
         "Admin Tools in Onboarding",
         "Common Configuration Issues & Fixes",
         "Permission Errors",
@@ -133,7 +133,7 @@ export default function SAPONBDetails() {
     {
       id: 9,
       section_title: "Module 9: Case Studies & Best Practices",
-      lessons: [
+      Modules: [
         "End-to-End Onboarding Case Study",
         "Best Practices for Enhancing New Hire Experience",
         "Change Management for Adoption",
@@ -142,7 +142,7 @@ export default function SAPONBDetails() {
     {
       id: 10,
       section_title: "Module 10: Hands-On & Certification Prep",
-      lessons: [
+      Modules: [
         "Hands-On Workshop in Demo System",
         "Configuring Complete Onboarding Flow",
         "Simulating New Hire Journeys",
@@ -167,7 +167,7 @@ export default function SAPONBDetails() {
           <div className="lg:col-span-2">
             <div className="mb-8 p-10">
               <div className="mb-4">
-                <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-md">
+                <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 text-sm font-medium rounded-md">
                   {course.category}
                 </span>
               </div>
@@ -212,7 +212,7 @@ export default function SAPONBDetails() {
                   onClick={() => setActiveTab("overview")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "overview"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -222,7 +222,7 @@ export default function SAPONBDetails() {
                   onClick={() => setActiveTab("curriculum")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "curriculum"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -247,7 +247,7 @@ export default function SAPONBDetails() {
                     "Hands-on exercises and certification preparation",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1" />
+                      <Check className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -274,11 +274,11 @@ export default function SAPONBDetails() {
                           />
                           <h4 className="font-semibold text-gray-900">{section.section_title}</h4>
                         </div>
-                        <span className="text-sm text-gray-500">{section.lessons.length} lessons</span>
+                        <span className="text-sm text-gray-500">{section.Modules.length} Modules</span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <div className="divide-y divide-gray-100">
-                          {section.lessons.map((lesson, i) => (
+                          {section.Modules.map((lesson, i) => (
                             <div
                               key={i}
                               className="px-6 py-4 flex items-center gap-4 hover:bg-gray-50"
@@ -312,13 +312,13 @@ export default function SAPONBDetails() {
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.lessons_count} Lessons</span>
+                      <span>{course.Modules_count} Modules</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
@@ -351,7 +351,7 @@ export default function SAPONBDetails() {
                     "Access on mobile and desktop",
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 text-gray-700">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -360,7 +360,7 @@ export default function SAPONBDetails() {
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Share this course:</h3>
-                <button className="w-full border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <Share2 className="w-5 h-5" />
                   Share Course
                 </button>

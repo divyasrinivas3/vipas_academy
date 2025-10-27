@@ -15,7 +15,7 @@ const features = [
     icon: Headphones,
     title: '24/7 Learner Support',
     description: 'We’ve got your back, always. Our dedicated support team is available 24/7 to guide you through every step of your learning journey.',
-    color: 'from-teal-900 to-green-600',
+    color: 'from-teal-900 to-teal-600',
   },
   {
     icon: Award,
@@ -77,7 +77,7 @@ export default function About() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-3"
                 >
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-6 h-6 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-4 h-4 text-teal-700" />
                   </div>
                   <span className="text-gray-900 text-justify">{benefit}</span>

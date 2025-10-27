@@ -35,9 +35,9 @@ export default function DataAnalyticsCourseDetails() {
     description:
       "Master Data Analytics from fundamentals to advanced Power BI and Excel analytics. Learn statistics, SQL, data modeling, visualization, forecasting, and real-world projects with hands-on exercises.",
     price: 149.99,
-    duration: "18 Weeks",
+    course_duration: "18 Weeks",
     level: "Beginner to Advanced",
-    lessons_count: 120,
+    Modules_count: 120,
     students_count: 1500,
     rating: 4.8,
     reviews_count: 200,
@@ -54,7 +54,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 1,
       section_title: "Module 1: Introduction to Data Analytics",
-      lessons: [
+      Modules: [
         "What are Data Analytics? (Descriptive, Diagnostic, Predictive, Prescriptive)",
         "Role of data in decision-making",
         "Data Analyst vs Data Scientist vs Business Analyst",
@@ -66,7 +66,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 2,
       section_title: "Module 2: Statistics & Data Foundations",
-      lessons: [
+      Modules: [
         "Types of data (structured vs unstructured, categorical vs numerical)",
         "Data collection & sources",
         "Descriptive statistics (mean, median, mode, Range, variance, standard deviation)",
@@ -82,7 +82,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 3,
       section_title: "Module 3: Excel Basics for Data Analytics",
-      lessons: [
+      Modules: [
         "Excel interface & navigation",
         "Data types, formatting, data validation",
         "Basic formulas & functions (SUM, AVERAGE, COUNT, IF, VLOOKUP/XLOOKUP, INDEX, MATCH)",
@@ -93,7 +93,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 4,
       section_title: "Module 4: Data Cleaning & Preparation",
-      lessons: [
+      Modules: [
         "Sorting & filtering data",
         "Removing duplicates & blanks",
         "Text functions (LEFT, RIGHT, MID, TRIM, CONCAT, TEXTJOIN)",
@@ -105,7 +105,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 5,
       section_title: "Module 5: Exploratory Data Analysis in Excel",
-      lessons: [
+      Modules: [
         "Conditional formatting",
         "PivotTables & PivotCharts",
         "Grouping & summarizing data",
@@ -117,7 +117,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 6,
       section_title: "Module 6: Advanced Excel for Analytics",
-      lessons: [
+      Modules: [
         "Advanced formulas (ARRAY formulas, IFERROR, SUMPRODUCT)",
         "Dynamic arrays (FILTER, SORT, UNIQUE, SEQUENCE)",
         "What-If Analysis (Scenario Manager, Goal Seek, Data Tables)",
@@ -129,7 +129,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 7,
       section_title: "Module 7: Data Visualization in Excel",
-      lessons: [
+      Modules: [
         "Best practices for charts (bar, line, pie, combo, waterfall)",
         "Sparklines & conditional formatting for dashboards",
         "Interactive dashboards with form controls",
@@ -140,7 +140,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 8,
       section_title: "Module 8: SQL for Data Analytics",
-      lessons: [
+      Modules: [
         "Introduction to databases & SQL",
         "SELECT, WHERE, ORDER BY",
         "Aggregate functions (SUM, COUNT, AVG, MAX, MIN)",
@@ -154,7 +154,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 9,
       section_title: "Module 9: Introduction to Power BI",
-      lessons: [
+      Modules: [
         "Power BI ecosystem (Desktop, Service, Mobile, Gateway)",
         "Data analytics workflow in Power BI",
         "Connecting Power BI with Excel & databases",
@@ -163,7 +163,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 10,
       section_title: "Module 10: Power BI Data Preparation (Power Query)",
-      lessons: [
+      Modules: [
         "Importing data from multiple sources",
         "Data cleaning & transformation with Power Query Editor",
         "M Language basics",
@@ -174,7 +174,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 11,
       section_title: "Module 11: Data Modeling in Power BI",
-      lessons: [
+      Modules: [
         "Data relationships (1-to-1, 1-to-many, many-to-many)",
         "Star vs snowflake schema",
         "Calculated columns & measures",
@@ -188,7 +188,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 12,
       section_title: "Module 12: Data Visualization in Power BI",
-      lessons: [
+      Modules: [
         "Charts & visuals (bar, line, scatter, pie, tree map, waterfall, map)",
         "Custom visuals & marketplace",
         "Formatting visuals & reports",
@@ -200,7 +200,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 13,
       section_title: "Module 13: Advanced Analytics in Power BI",
-      lessons: [
+      Modules: [
         "KPIs & scorecards",
         "Forecasting & trend lines",
         "Decomposition tree",
@@ -212,7 +212,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 14,
       section_title: "Module 14: Power BI Service & Collaboration",
-      lessons: [
+      Modules: [
         "Publishing reports to Power BI Service",
         "Workspaces & apps",
         "Sharing reports & dashboards securely",
@@ -224,7 +224,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 15,
       section_title: "Module 15: Advanced Analytics Concepts",
-      lessons: [
+      Modules: [
         "Time series analysis (trends, seasonality, moving averages)",
         "Forecasting techniques",
         "Clustering & segmentation (K-means basics)",
@@ -236,7 +236,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 16,
       section_title: "Module 16: Big Data & Cloud Analytics (Introductory)",
-      lessons: [
+      Modules: [
         "Basics of Big Data (Hadoop, Spark overview)",
         "Cloud data platforms (AWS, Azure, Google BigQuery)",
         "Connecting BI tools to cloud data sources",
@@ -245,7 +245,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 17,
       section_title: "Module 17: Soft Skills for Data Analysts",
-      lessons: [
+      Modules: [
         "Problem-solving & critical thinking",
         "Business domain knowledge (finance, marketing, HR, operations)",
         "Communication & storytelling with data",
@@ -255,7 +255,7 @@ export default function DataAnalyticsCourseDetails() {
     {
       id: 18,
       section_title: "Module 18: Capstone Projects",
-      lessons: [
+      Modules: [
         "Retail Analytics Project → Analyze sales & customer data, create dashboards",
         "HR Analytics Project → Predict attrition & create workforce reports",
         "Finance Analytics Project → Budget forecasting & variance analysis",
@@ -280,7 +280,7 @@ export default function DataAnalyticsCourseDetails() {
           <div className="lg:col-span-2">
             <div className="mb-8 p-10">
               <div className="mb-4">
-                <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-md">
+                <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 text-sm font-medium rounded-md">
                   {course.category}
                 </span>
               </div>
@@ -327,7 +327,7 @@ export default function DataAnalyticsCourseDetails() {
                   onClick={() => setActiveTab("overview")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "overview"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -337,7 +337,7 @@ export default function DataAnalyticsCourseDetails() {
                   onClick={() => setActiveTab("curriculum")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "curriculum"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -366,7 +366,7 @@ export default function DataAnalyticsCourseDetails() {
                     "Complete real-world capstone projects",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1" />
+                      <Check className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -400,12 +400,12 @@ export default function DataAnalyticsCourseDetails() {
                           </h4>
                         </div>
                         <span className="text-sm text-gray-500">
-                          {section.lessons.length} lessons
+                          {section.Modules.length} Modules
                         </span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <div className="divide-y divide-gray-100">
-                          {section.lessons.map((lesson, i) => (
+                          {section.Modules.map((lesson, i) => (
                             <div
                               key={i}
                               className="px-6 py-4 flex items-center gap-4 hover:bg-gray-50"
@@ -439,13 +439,13 @@ export default function DataAnalyticsCourseDetails() {
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.lessons_count} Lessons</span>
+                      <span>{course.Modules_count} Modules</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
@@ -483,7 +483,7 @@ export default function DataAnalyticsCourseDetails() {
                       key={i}
                       className="flex items-center gap-3 text-gray-700"
                     >
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -494,7 +494,7 @@ export default function DataAnalyticsCourseDetails() {
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   Share this course:
                 </h3>
-                <button className="w-full border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <Share2 className="w-5 h-5" />
                   Share Course
                 </button>

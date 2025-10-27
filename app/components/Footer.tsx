@@ -15,8 +15,8 @@ export default function Footer() {
 
   const courses = [
     { name: 'Web Development', href: 'courses/fullstack-development' },
-    { name: 'Data Science', href: 'courses/data-analytics' },
-    { name: 'Sales and Distribution', href: 'courses/sales-distribution' },
+    { name: 'Data Analytics', href: 'courses/data-analytics' },
+    { name: 'SAP Courses', href: 'courses/sales-distribution' },
   
   ];
 
@@ -43,7 +43,7 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
         >
           <motion.div variants={staggerItem} className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
@@ -109,21 +109,6 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          <motion.div variants={staggerItem}>
-            <h3 className="text-white text-lg font-bold mb-4">Support</h3>
-            <ul className="space-y-3">
-              {support.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="hover:text-blue-500 transition-colors duration-300 hover:translate-x-1 inline-block"
-                  >
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
         </motion.div>
 
         <motion.div

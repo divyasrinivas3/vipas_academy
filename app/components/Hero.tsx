@@ -119,7 +119,7 @@ export default function Hero() {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center">
                   <Users className="w-6 h-6 text-teal-700" />
                 </div>
                 <div>

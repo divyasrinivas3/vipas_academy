@@ -6,7 +6,7 @@ export const fadeInUp: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      course_duration: 0.6,
       ease: 'easeOut',
     },
   },
@@ -17,7 +17,7 @@ export const fadeIn: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.6,
+      course_duration: 0.6,
       ease: 'easeOut',
     },
   },
@@ -29,7 +29,7 @@ export const fadeInLeft: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6,
+      course_duration: 0.6,
       ease: 'easeOut',
     },
   },
@@ -41,7 +41,7 @@ export const fadeInRight: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6,
+      course_duration: 0.6,
       ease: 'easeOut',
     },
   },
@@ -53,7 +53,7 @@ export const scaleIn: Variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
+      course_duration: 0.5,
       ease: 'easeOut',
     },
   },
@@ -76,7 +76,7 @@ export const staggerItem: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      course_duration: 0.5,
       ease: 'easeOut',
     },
   },
@@ -98,7 +98,7 @@ export const slideInUp: Variants = {
 export const hoverScale = {
   scale: 1.05,
   transition: {
-    duration: 0.3,
+    course_duration: 0.3,
     ease: 'easeInOut',
   },
 };
@@ -107,7 +107,7 @@ export const cardHover = {
   y: -10,
   boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
   transition: {
-    duration: 0.3,
+    course_duration: 0.3,
     ease: 'easeOut',
   },
 };

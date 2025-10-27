@@ -13,6 +13,8 @@ import {
   ChevronDown,
   Users,
   PhoneCall,
+  CheckCircle,
+  Award,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
@@ -28,7 +30,7 @@ interface CurriculumSection {
   id: string;
   section_title: string;
   section_order: number;
-  lessons: Lesson[];
+  Modules: Lesson[];
 }
 
 interface Inclusion {
@@ -40,10 +42,10 @@ interface Course {
   id: string;
   title: string;
   description: string;
-  price: number;
-  duration: string;
+  course_overview:string;
+  course_duration: string;
   level: string;
-  lessons_count: number;
+  Modules_count: number;
   students_count: number;
   rating: number;
   reviews_count: number;
@@ -53,6 +55,8 @@ interface Course {
   instructor_name: string;
   instructor_title: string;
   instructor_image: string;
+  internship:string;
+  image_enroll:string;
 }
 
 export default function SAPFICODetailsArea() {
@@ -66,16 +70,17 @@ export default function SAPFICODetailsArea() {
   const course: Course = {
     id: "3",
     title: "SAP FICO (Financial Accounting & Controlling)",
-    description:
-      "Master SAP FICO to handle financial accounting and controlling processes. Learn from real-world business scenarios and get hands-on experience with SAP S/4HANA for managing ledgers, assets, and cost centers effectively.",
-    price: 249,
-    duration: "60h 45m",
+    description:"Take charge of your organization’s financial data with SAP FICO. Learn ledger management, asset accounting, cost centers, and reporting to make informed financial decisions. ",
+    course_overview:"Master SAP FICO to perform financial accounting, controlling, and reporting tasks. Learn to manage ledgers, cost centers, and assets while linking FI and CO processes across business functions.",
+    course_duration: "3 Months",
     level: "Beginner to Advanced",
-    lessons_count: 220,
+    Modules_count: 19,
     students_count: 1890,
     rating: 4.8,
     reviews_count: 254,
+    image_enroll:"/Enroll-Now.png",
     category: "SAP",
+    internship:"3 Months",
     language: "English",
     image_url:
       "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -86,7 +91,7 @@ export default function SAPFICODetailsArea() {
   };
 
   const inclusions: Inclusion[] = [
-    { id: "i1", inclusion_text: "Lifetime access to all lessons and updates" },
+    { id: "i1", inclusion_text: "Lifetime access to all Modules and updates" },
     { id: "i2", inclusion_text: "Hands-on exercises with real business data" },
     { id: "i3", inclusion_text: "Certificate of completion" },
     { id: "i4", inclusion_text: "Self-paced, 100% online learning" },
@@ -99,7 +104,7 @@ export default function SAPFICODetailsArea() {
       id: "mod1",
       section_title: "Module 1: Introduction to SAP & FICO",
       section_order: 1,
-      lessons: [
+      Modules: [
         {
           id: "l1",
           lesson_title: "Overview of SAP ERP & SAP S/4HANA",
@@ -127,7 +132,7 @@ export default function SAPFICODetailsArea() {
       section_title:
         "Module 2: SAP FI Enterprise Structure and Global Settings",
       section_order: 2,
-      lessons: [
+      Modules: [
         {
           id: "l5",
           lesson_title: "Creation and assignment of company and company code",
@@ -154,7 +159,7 @@ export default function SAPFICODetailsArea() {
       id: "mod3",
       section_title: "Module 3: Financial Accounting (FI) – General Ledger",
       section_order: 3,
-      lessons: [
+      Modules: [
         {
           id: "l9",
           lesson_title: "GL master data & account groups",
@@ -181,7 +186,7 @@ export default function SAPFICODetailsArea() {
       id: "mod4",
       section_title: "Module 4: SAP FI Accounts Payable",
       section_order: 4,
-      lessons: [
+      Modules: [
         {
           id: "l13",
           lesson_title: "Vendor master data creation",
@@ -209,7 +214,7 @@ export default function SAPFICODetailsArea() {
       id: "mod5",
       section_title: "Module 5: SAP FI Accounts Receivable",
       section_order: 5,
-      lessons: [
+      Modules: [
         {
           id: "l17",
           lesson_title: "Customer master creation",
@@ -231,7 +236,7 @@ export default function SAPFICODetailsArea() {
       id: "mod6",
       section_title: "Module 6: SAP FI Asset Accounting",
       section_order: 6,
-      lessons: [
+      Modules: [
         {
           id: "l20",
           lesson_title: "Chart of depreciation and asset classes",
@@ -253,7 +258,7 @@ export default function SAPFICODetailsArea() {
       id: "mod7",
       section_title: "Module 7: SAP FI Reports",
       section_order: 7,
-      lessons: [
+      Modules: [
         {
           id: "l23",
           lesson_title: "Financial Statement Versions (FSV)",
@@ -270,7 +275,7 @@ export default function SAPFICODetailsArea() {
       id: "mod8",
       section_title: "Module 8: Bank Accounting",
       section_order: 8,
-      lessons: [
+      Modules: [
         {
           id: "l25",
           lesson_title: "House bank & bank accounts",
@@ -292,7 +297,7 @@ export default function SAPFICODetailsArea() {
       id: "mod9",
       section_title: "Module 9: SAP CO – Basic Settings & Cost Elements",
       section_order: 9,
-      lessons: [
+      Modules: [
         {
           id: "l28",
           lesson_title: "Introduction to Controlling (CO)",
@@ -309,7 +314,7 @@ export default function SAPFICODetailsArea() {
       id: "mod10",
       section_title: "Module 10: SAP CO Cost Center Accounting",
       section_order: 10,
-      lessons: [
+      Modules: [
         {
           id: "l30",
           lesson_title: "Cost centers creation & planning",
@@ -326,7 +331,7 @@ export default function SAPFICODetailsArea() {
       id: "mod11",
       section_title: "Module 11: SAP CO Internal Orders",
       section_order: 11,
-      lessons: [
+      Modules: [
         {
           id: "l32",
           lesson_title: "Internal order creation, budgeting & settlement",
@@ -338,7 +343,7 @@ export default function SAPFICODetailsArea() {
       id: "mod12",
       section_title: "Module 12: SAP CO Profit Center Accounting",
       section_order: 12,
-      lessons: [
+      Modules: [
         {
           id: "l33",
           lesson_title: "Profit centers creation, assignment & reporting",
@@ -350,7 +355,7 @@ export default function SAPFICODetailsArea() {
       id: "mod13",
       section_title: "Module 13: SAP CO-PA Reporting",
       section_order: 13,
-      lessons: [
+      Modules: [
         {
           id: "l34",
           lesson_title: "Profitability analysis (CO-PA) configuration",
@@ -362,7 +367,7 @@ export default function SAPFICODetailsArea() {
       id: "mod14",
       section_title: "Module 14: SAP FI Integration with MM",
       section_order: 14,
-      lessons: [
+      Modules: [
         {
           id: "l35",
           lesson_title: "Procurement cycle integration with MM",
@@ -379,7 +384,7 @@ export default function SAPFICODetailsArea() {
       id: "mod15",
       section_title: "Module 15: SAP FI Integration with SD",
       section_order: 15,
-      lessons: [
+      Modules: [
         {
           id: "l37",
           lesson_title: "Sales process integration & VKOA setup",
@@ -391,7 +396,7 @@ export default function SAPFICODetailsArea() {
       id: "mod16",
       section_title: "Module 16: Petty Cash Management",
       section_order: 16,
-      lessons: [
+      Modules: [
         {
           id: "l38",
           lesson_title: "Cash journal, GL integration, fund replenishment",
@@ -403,7 +408,7 @@ export default function SAPFICODetailsArea() {
       id: "mod17",
       section_title: "Module 17: Month-end & Year-end Closing Activities",
       section_order: 17,
-      lessons: [
+      Modules: [
         {
           id: "l39",
           lesson_title: "Posting periods, accruals, reconciliations & reports",
@@ -415,7 +420,7 @@ export default function SAPFICODetailsArea() {
       id: "mod18",
       section_title: "Module 18: SAP FICO in S/4HANA",
       section_order: 18,
-      lessons: [
+      Modules: [
         {
           id: "l40",
           lesson_title:
@@ -428,7 +433,7 @@ export default function SAPFICODetailsArea() {
       id: "mod19",
       section_title: "Module 19: Capstone Project",
       section_order: 19,
-      lessons: [
+      Modules: [
         {
           id: "l41",
           lesson_title: "End-to-end SAP FICO practical scenario",
@@ -467,22 +472,15 @@ export default function SAPFICODetailsArea() {
 
               <div className="flex flex-wrap items-center gap-6 mb-6">
                 <div className="flex items-center gap-2">
-                  <Star className="text-yellow-400 fill-yellow-400 w-5 h-5" />
-                  <span className="font-semibold text-gray-900">
-                    {course.rating}
-                  </span>
-                  <span className="text-gray-500">
-                    ({course.reviews_count} reviews)
-                  </span>
+                  
                 </div>
                 <div className="flex items-center gap-2 text-gray-600">
-                  <Users className="w-5 h-5" />
-                  <span>{course.students_count.toLocaleString()} students</span>
+                 
                 </div>
               </div>
 
               <div className="flex items-center gap-4 mb-8">
-                <img
+                {/* <img
                   src={course.instructor_image}
                   alt={course.instructor_name}
                   className="w-12 h-12 rounded-full"
@@ -493,8 +491,8 @@ export default function SAPFICODetailsArea() {
                   </p>
                   <p className="text-gray-500 text-sm">
                     {course.instructor_title}
-                  </p>
-                </div>
+                  </p> */}
+                {/* </div> */}
               </div>
 
               <img
@@ -510,7 +508,7 @@ export default function SAPFICODetailsArea() {
                 onClick={() => setActiveTab("overview")}
                 className={`pb-4 font-semibold text-base ${
                   activeTab === "overview"
-                    ? "text-theme-green"
+                    ? "text-teal-600"
                     : "text-gray-500"
                 }`}
               >
@@ -520,7 +518,7 @@ export default function SAPFICODetailsArea() {
                 onClick={() => setActiveTab("curriculum")}
                 className={`pb-4 font-semibold text-base ${
                   activeTab === "curriculum"
-                    ? "text-theme-green"
+                    ? "text-theme-teal"
                     : "text-gray-500"
                 }`}
               >
@@ -532,18 +530,18 @@ export default function SAPFICODetailsArea() {
             {activeTab === "overview" ? (
               <div>
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
-                <p className="text-gray-600 mb-6">{course.description}</p>
+                <p className="text-gray-600 mb-6">{course.course_overview}</p>
 
                 <h4 className="text-xl font-bold mb-4">You’ll Learn</h4>
                 <div className="space-y-2">
                   {[
-                    "Master SAP Financial Accounting & Controlling modules.",
-                    "Learn integration with MM, SD, and Asset Accounting.",
-                    "Configure organizational structures, GL, and reporting.",
-                    "Perform end-to-end financial processes with hands-on tasks.",
+                    "Configure general ledger, accounts payable, and receivable ",
+                    "Manage cost centers, internal orders, and asset accounting ",
+                    "Integrate with MM, SD, and HR modules ",
+                    "Apply hands-on exercises reflecting real-world finance scenarios ",
                   ].map((text, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-theme-green mt-1" />
+                      <CheckCircle className="w-5 h-5 text-theme-teal mt-1" />
                       <span>{text}</span>
                     </div>
                   ))}
@@ -554,7 +552,7 @@ export default function SAPFICODetailsArea() {
                 </h4>
                 {inclusions.map((inc) => (
                   <div key={inc.id} className="flex items-center gap-3 mb-2">
-                    <Check className="w-5 h-5 text-theme-green" />
+                    <Check className="w-5 h-5 text-theme-teal" />
                     <span>{inc.inclusion_text}</span>
                   </div>
                 ))}
@@ -582,13 +580,14 @@ export default function SAPFICODetailsArea() {
                         </h4>
                       </div>
                       <span className="text-sm text-gray-500">
-                        {section.lessons.length} lessons
+                        {section.Modules.length} Modules
                       </span>
+                       
                     </button>
 
                     {expandedSections.has(section.id) && (
                       <div className="divide-y divide-gray-100">
-                        {section.lessons.map((lesson) => (
+                        {section.Modules.map((lesson) => (
                           <div
                             key={lesson.id}
                             className="p-4 flex items-center gap-3 hover:bg-gray-50"
@@ -615,14 +614,24 @@ export default function SAPFICODetailsArea() {
                 <div className="mb-6">
                   <div className="flex items-baseline gap-2 mb-4">
                     <span className="text-4xl font-bold text-gray-900">
-                      ${course.price}
+                      <img
+                      src={course.image_enroll}
+                      alt={course.title}
+                      width={"400"}
+                      height={300}
+                      className="w-full h-96 object-cover"
+                    />
                     </span>
                   </div>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-3 text-gray-700">
                       <Clock className="w-5 h-5 text-gray-400" />
-                      <span>{course.duration}</span>
+                      <span>{course.course_duration}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <Award className="w-5 h-5 text-gray-400" />
+                      <span>{course.internship} Internship</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BarChart3 className="w-5 h-5 text-gray-400" />
@@ -630,18 +639,18 @@ export default function SAPFICODetailsArea() {
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.lessons_count} Lessons</span>
+                      <span>{course.Modules_count} Modules</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-theme-green hover:bg-green-600 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                  <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
                   <button
-                    className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                    className="bg-teal-600 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
                     onClick={() => setShowModal(true)}
                   >
                     <Download size={20} />
@@ -659,15 +668,15 @@ export default function SAPFICODetailsArea() {
               </div>
 
               {/* Share Course */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+              {/* <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   Share this course:
                 </h3>
-                <button className="w-full border-2 border-gray-300 hover:border-theme-green text-gray-700 hover:text-theme-green font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+                <button className="w-full border-2 border-gray-300 hover:border-theme-teal text-gray-700 hover:text-theme-teal font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
                   <Share2 className="w-5 h-5" />
                   Share Course
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

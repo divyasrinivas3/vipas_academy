@@ -33,9 +33,9 @@ export default function SACSAPPlanningDetails() {
     description:
       "Learn SAP Analytics Cloud Planning for budgeting, forecasting, financial planning, driver-based planning, and integration with SAP ERP/BPC. Master SAC Planning workflows, models, data actions, predictive planning, dashboards, and enterprise-level security with hands-on exercises.",
     price: 179.99,
-    duration: "12 Weeks",
+    course_duration: "12 Weeks",
     level: "Intermediate",
-    lessons_count: 70,
+    Modules_count: 70,
     students_count: 1200,
     rating: 4.9,
     reviews_count: 180,
@@ -52,7 +52,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 1,
       section_title: "Module 1: Introduction to SAC",
-      lessons: [
+      Modules: [
         "Overview of SAP Analytics Cloud (BI, Planning, Predictive, Augmented Analytics)",
         "SAC architecture & deployment on SAP BTP",
         "Key use cases (finance, sales, HR, supply chain)",
@@ -65,7 +65,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 2,
       section_title: "Module 2: SAC Core Cloud Components",
-      lessons: [
+      Modules: [
         "Business Intelligence (BI) – Data connections (live vs import)",
         "Data modeling in SAC",
         "Creating & managing models (dimensions, measures, hierarchies)",
@@ -85,7 +85,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 3,
       section_title: "Module 3: Introduction to SAC Planning",
-      lessons: [
+      Modules: [
         "Overview of SAC Planning vs SAC BI",
         "SAC Planning architecture",
         "Planning workflows and use cases (finance, sales, HR, supply chain)",
@@ -95,7 +95,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 4,
       section_title: "Module 4: Data Connections & Integration",
-      lessons: [
+      Modules: [
         "Import vs Live connections for planning",
         "Data acquisition from SAP & non-SAP sources",
         "Integration with SAP S/4HANA, SAP BW/4HANA, SAP Datasphere",
@@ -107,7 +107,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 5,
       section_title: "Module 5: Planning Models",
-      lessons: [
+      Modules: [
         "Creating planning models (dimensions, measures, hierarchies, attributes)",
         "Time dimensions & granularity (year, quarter, month, day)",
         "Currency conversion & exchange rates",
@@ -119,7 +119,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 6,
       section_title: "Module 6: Data Entry & Spreading",
-      lessons: [
+      Modules: [
         "Manual data entry in stories",
         "Spreading data across time & entities",
         "Data-driven distribution rules",
@@ -131,7 +131,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 7,
       section_title: "Module 7: Planning Functions",
-      lessons: [
+      Modules: [
         "Data actions (copy, allocate, forecast, custom logic)",
         "Multi-step data actions & process automation",
         "Predictive forecasting (Smart Predict integration)",
@@ -142,7 +142,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 8,
       section_title: "Module 8: Collaboration & Workflow",
-      lessons: [
+      Modules: [
         "Assignments, tasks, and input forms",
         "Review & approval workflows",
         "Commenting, discussions & collaboration features",
@@ -153,7 +153,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 9,
       section_title: "Module 9: Forecasting & Predictive Planning",
-      lessons: [
+      Modules: [
         "Rolling forecasts vs static budgets",
         "Predictive planning scenarios (time series forecasting)",
         "Integration with Smart Predict for demand & sales forecasting",
@@ -164,7 +164,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 10,
       section_title: "Module 10: Reporting & Analysis for Planning",
-      lessons: [
+      Modules: [
         "Building planning stories & dashboards",
         "Combining actuals, plan, and forecast data",
         "Variance analysis & version comparison (Actual vs Plan vs Forecast)",
@@ -175,7 +175,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 11,
       section_title: "Module 11: Security & Administration",
-      lessons: [
+      Modules: [
         "User roles for planning (input providers, reviewers, admins)",
         "Data access control & data locking",
         "Managing public/private versions securely",
@@ -186,7 +186,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 12,
       section_title: "Module 12: Advanced Topics",
-      lessons: [
+      Modules: [
         "Multi-model planning (cross-model calculations)",
         "Hybrid planning with SAC + BPC",
         "Integration with SAP Datasphere for enterprise planning",
@@ -196,7 +196,7 @@ export default function SACSAPPlanningDetails() {
     {
       id: 13,
       section_title: "Module 13: Capstone Project",
-      lessons: [
+      Modules: [
         "End-to-end financial planning scenario",
         "Load actuals from SAP S/4HANA",
         "Create planning model with versions (Actual, Plan, Forecast)",
@@ -224,7 +224,7 @@ export default function SACSAPPlanningDetails() {
           <div className="lg:col-span-2">
             <div className="mb-8 p-10">
               <div className="mb-4">
-                <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-md">
+                <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 text-sm font-medium rounded-md">
                   {course.category}
                 </span>
               </div>
@@ -269,7 +269,7 @@ export default function SACSAPPlanningDetails() {
                   onClick={() => setActiveTab("overview")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "overview"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -279,7 +279,7 @@ export default function SACSAPPlanningDetails() {
                   onClick={() => setActiveTab("curriculum")}
                   className={`pb-4 px-2 font-semibold text-base ${
                     activeTab === "curriculum"
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-teal-600 border-b-2 border-teal-600"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -304,7 +304,7 @@ export default function SACSAPPlanningDetails() {
                     "Execute hands-on capstone project for enterprise planning scenarios",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1" />
+                      <Check className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -331,11 +331,11 @@ export default function SACSAPPlanningDetails() {
                           />
                           <h4 className="font-semibold text-gray-900">{section.section_title}</h4>
                         </div>
-                        <span className="text-sm text-gray-500">{section.lessons.length} lessons</span>
+                        <span className="text-sm text-gray-500">{section.Modules.length} Modules</span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <div className="divide-y divide-gray-100">
-                          {section.lessons.map((lesson, i) => (
+                          {section.Modules.map((lesson, i) => (
                             <div
                               key={i}
                               className="px-6 py-4 flex items-center gap-4 hover:bg-gray-50"
@@ -369,13 +369,13 @@ export default function SACSAPPlanningDetails() {
                     </div>
                     <div className="flex items-center gap-3 text-gray-700">
                       <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.lessons_count} Lessons</span>
+                      <span>{course.Modules_count} Modules</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
@@ -408,7 +408,7 @@ export default function SACSAPPlanningDetails() {
                     "Access on mobile and desktop",
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 text-gray-700">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -417,7 +417,7 @@ export default function SACSAPPlanningDetails() {
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Share this course:</h3>
-                <button className="w-full border-2 border-gray-300 hover:border-green-600 text-gray-700 hover:text-green-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <Share2 className="w-5 h-5" />
                   Share Course
                 </button>
