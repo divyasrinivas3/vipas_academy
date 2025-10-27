@@ -8,9 +8,9 @@ import { fadeInUp, staggerContainer, staggerItem, cardHover } from '@/lib/animat
 const courses = [
   {
     title: 'AI-ML',
-    category: 'SAP',
+    category: 'Development',
     instructor: 'John Smith',
-    image: '/AIML.png',
+    image: '/AIML.jpg',
     students: 12450,
     course_duration: '6 months',
     level: 'Beginner',

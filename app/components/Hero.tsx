@@ -83,9 +83,16 @@ export default function Hero() {
       Explore Courses
       <Play className="w-5 h-5" />
     </button>
-              <button className="bg-white text-gray-700 px-8 py-4 rounded-full font-semibold border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 transition-all duration-300">
-                Learn More
-              </button>
+              <button
+  onClick={() => {
+    const el = document.querySelector("#contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="bg-blue-900 text-white px-8 py-4 rounded-xl font-semibold border-2 border-blue-900 hover:border-blue-900 hover:text-white transition-all duration-300"
+>
+  Enroll Now
+</button>
+
             </motion.div>
 
             <motion.div

@@ -12,9 +12,12 @@ import {
   PhoneCall,
   Download,
   Share2,
+  Award,
+  CheckCircle,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
+import Image from "next/image";
 
 export default function SAPOFBDetails() {
     const [showModal, setShowModal] = useState(false);
@@ -30,12 +33,13 @@ export default function SAPOFBDetails() {
 
   const course = {
     title: "SAP SuccessFactors Offboarding (OFB)",
-    description:
-      "Master SAP SuccessFactors Offboarding (OFB) to efficiently manage employee exits. Learn configuration, workflows, reporting, advanced setups, and hands-on case studies with real-time scenarios.",
+    description:"Learn to streamline the employee onboarding experience using SAP SuccessFactors OMB/OFB. Focus on automating workflows, engaging new hires, and ensuring compliance. ",
     price: 149.99,
-    course_duration: "8 Weeks",
+    course_duration: "3 Months Course",
+    Course_overview:"Master SAP SuccessFactors Onboarding to configure onboarding templates, task workflows, and automated processes. Apply hands-on projects simulating real-world onboarding for employees. ",
+    internship:"3 Months",
     level: "Intermediate",
-    Modules_count: 50,
+    Modules_count: 9,
     students_count: 900,
     rating: 4.6,
     reviews_count: 120,
@@ -46,6 +50,7 @@ export default function SAPOFBDetails() {
     instructor_title: "SAP Certified SuccessFactors Consultant",
     instructor_image:
       "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100",
+    course_enroll:"/Enroll-Now.png",
   };
 
   const curriculum = [
@@ -167,18 +172,9 @@ export default function SAPOFBDetails() {
               <div className="flex flex-wrap items-center gap-6 mb-6">
                 <div className="flex items-center gap-2">
                   <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-5 h-5 ${
-                          i < Math.floor(course.rating)
-                            ? "fill-yellow-400 text-yellow-400"
-                            : "text-gray-300"
-                        }`}
-                      />
-                    ))}
+                    
+                   
                   </div>
-                  <span className="font-semibold text-gray-900">{course.rating}</span>
                 </div>
               </div>
 
@@ -192,7 +188,7 @@ export default function SAPOFBDetails() {
             </div>
 
             {/* Tabs */}
-            <div className="max-w-7xl mx-auto border-b border-gray-200 mb-8">
+            <div className="max-w-8xl mx-auto border-b border-gray-200 mb-8">
               <div className="flex gap-8">
                 <button
                   onClick={() => setActiveTab("overview")}
@@ -220,9 +216,9 @@ export default function SAPOFBDetails() {
             {activeTab === "overview" ? (
               <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{course.description}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">{course.Course_overview}</p>
 
-                <h4 className="text-xl font-bold mb-4 mt-8">What You’ll Learn</h4>
+                <h4 className="text-xl font-bold mb-4 mt-8">What You&apos;ll Learn</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
                     "Understand structured offboarding and its impact",
@@ -233,7 +229,7 @@ export default function SAPOFBDetails() {
                     "Hands-on practice and certification preparation",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-teal-600 mt-1" />
+                      <CheckCircle className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -284,54 +280,67 @@ export default function SAPOFBDetails() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-8 w-auto p-10">
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
-                <div className="mb-6">
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <Clock className="w-5 h-5 text-gray-400" />
-                      <span>{course.course_duration}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <BarChart3 className="w-5 h-5 text-gray-400" />
-                      <span>{course.level}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <BookOpen className="w-5 h-5 text-gray-400" />
-                      <span>{course.Modules_count} Modules</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
-                    <PhoneCall className="w-5 h-5" />
-                    Enroll Now
-                  </button>
-                  <button
-        className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-        onClick={() => setShowModal(true)}
-      >
-        <Download size={20} />
-        Download Syllabus
-      </button>
-
-      {showModal && (
-        <DownloadSyllabusModal
-          onClose={() => setShowModal(false)}
-          fileName="SF-OFB.pdf" // 👈 change this dynamically per course
-          displayName="SF_Offboarding_course.pdf" // optional pretty name
-        />
-      )}
-                </div>
-              </div>
-
+                      <div className="sticky top-8">
+                        {/* Price Card */}
+                        <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
+                          <div className="mb-6">
+                            <div className="flex items-baseline gap-2 mb-4">
+                              <Image
+                                src={course.course_enroll}
+                                alt={course.title}
+                                width={"400"}
+                                height={300}
+                                className="w-full h-60 object-cover"
+                              />
+                            </div>
+          
+                            <div className="space-y-3 mb-6">
+                              <div className="flex items-center gap-3 text-gray-900">
+                                <Clock className="w-5 h-5 text-gray-900" />
+                                <span>{course.course_duration}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-900">
+                                <Award className="w-5 h-5 text-gray-900" />
+                                <span>{course.internship}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-900">
+                                <BarChart3 className="w-5 h-5 text-gray-900" />
+                                <span>{course.level}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-900">
+                                <BookOpen className="w-5 h-5 text-gray-900" />
+                                <span>{course.Modules_count} Modules</span>
+                              </div>
+                            </div>
+                          </div>
+          
+                          <div className="space-y-3">
+                            <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                              <PhoneCall className="w-5 h-5" />
+                              Enroll Now
+                            </button>
+                            <button
+                              className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                              onClick={() => setShowModal(true)}
+                            >
+                              <Download size={20} />
+                              Download Syllabus
+                            </button>
+          
+                            {showModal && (
+                              <DownloadSyllabusModal
+                                onClose={() => setShowModal(false)}
+                                fileName="SF-OFB.pdf" // 👈 change this dynamically per course
+                                displayName="SAP Offboarding Course.pdf" // optional pretty name
+                              />
+                            )}
+                          </div>
+                        </div>
               <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">This Course Includes:</h3>
                 <div className="space-y-3">
                   {[
                     "Lifetime access",
-                    "30-day money-back guarantee",
                     "Downloadable resources",
                     "Certificate of completion",
                     "Access on mobile and desktop",

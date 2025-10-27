@@ -13,6 +13,7 @@ import {
   Download,
   Share2,
   Award,
+  CheckCircle,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
@@ -247,15 +248,14 @@ export default function SAPRMKDetails() {
                 <h4 className="text-xl font-bold mb-4 mt-8">What You&apos;ll Learn</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    "Design and build RMK-enabled career sites",
-                    "Optimize job postings with SEO and multi-channel distribution",
-                    "Integrate RMK with RCM and Onboarding",
-                    "Manage candidate experience, CRM, and talent pools",
-                    "Track analytics and KPIs to improve recruiting effectiveness",
-                    "Hands-on capstone project for real-world RMK implementation",
+                    "Configure RMK career sites and templates ",
+                    "Manage candidate engagement and branding strategies ",
+                    "Track campaign performance and recruitment analytics",
+                    "Integrate RMK with Recruiting Management (RCM) and Employee Central ",
+                    "Apply hands-on exercises and real-life recruitment scenarios ",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-teal-600 mt-1" />
+                      <CheckCircle className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}

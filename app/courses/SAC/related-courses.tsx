@@ -10,7 +10,7 @@ const courses = [
     title: 'Data-Analytics',
     category: 'SAP',
     instructor: 'John Smith',
-    image: '/data-analytics.png',
+    image: '/data-analytics.jpg',
     students: 12450,
     course_duration: '6 months',
     level: 'Beginner',

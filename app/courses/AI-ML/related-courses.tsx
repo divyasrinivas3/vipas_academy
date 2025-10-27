@@ -20,7 +20,7 @@ const courses = [
     title: 'SAP FullStack-Development',
     category: 'SAP',
     instructor: 'Lisa Johnson',
-    image: '/fullstack-development.png',
+    image: '/fullstack-development.jpg',
     students: 9800,
     course_duration: '6 months',
     level: 'Intermediate',

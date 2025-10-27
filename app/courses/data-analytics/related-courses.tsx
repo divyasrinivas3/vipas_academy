@@ -10,7 +10,7 @@ const courses = [
     title: 'SAP SAC',
     category: 'SAP',
     instructor: 'John Smith',
-    image: '/SAC.png',
+    image: '/SAC.jpg',
     students: 12450,
     course_duration: '6 months',
     level: 'Beginner',

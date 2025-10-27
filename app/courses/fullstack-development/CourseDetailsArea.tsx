@@ -12,10 +12,12 @@ import {
   PhoneCall,
   Download,
   Share2,
+  Award,
+  CheckCircle,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
-
+import Image from "next/image";
 export default function FullStackCourseDetails() {
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
@@ -30,10 +32,10 @@ export default function FullStackCourseDetails() {
 
   const course = {
     title: "Full Stack Development Course",
-    description:
-      "Become a professional Full Stack Developer. Learn HTML, CSS, JavaScript, React, Node.js, Express, SQL/NoSQL databases, REST APIs, and deploy real-world full-stack projects.",
-    price: 199.99,
-    course_duration: "9 Weeks",
+    description:"Learn front-end, back-end, and database technologies to build fully functional web applications. Focus on HTML, CSS, JavaScript, Node.js, React, and databases for real-world projects.",
+    course_overview:"Master Full Stack Development by building end-to-end web applications. Gain hands-on coding experience with front-end interfaces, server-side logic, and database management. ",
+    course_duration: "3 Months Course",
+    internship:"3 Months",
     level: "Beginner to Advanced",
     Modules_count: 80,
     students_count: 1800,
@@ -46,6 +48,7 @@ export default function FullStackCourseDetails() {
     instructor_title: "Full Stack Developer & Instructor",
     instructor_image:
       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100",
+    course_enroll:"/Enroll-Now.png",
   };
 
   const curriculum = [
@@ -182,18 +185,8 @@ export default function FullStackCourseDetails() {
               <div className="flex flex-wrap items-center gap-6 mb-6">
                 <div className="flex items-center gap-2">
                   <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-5 h-5 ${
-                          i < Math.floor(course.rating)
-                            ? "fill-yellow-400 text-yellow-400"
-                            : "text-gray-300"
-                        }`}
-                      />
-                    ))}
+                   
                   </div>
-                  <span className="font-semibold text-gray-900">{course.rating}</span>
                 </div>
               </div>
 
@@ -234,20 +227,19 @@ export default function FullStackCourseDetails() {
             {activeTab === "overview" ? (
               <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{course.description}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">{course.course_overview}</p>
 
-                <h4 className="text-xl font-bold mb-4 mt-8">What You’ll Learn</h4>
+                <h4 className="text-xl font-bold mb-4 mt-8">What You&apos;ll Learn</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    "Master HTML, CSS, JavaScript, React, Node.js, Express, SQL/NoSQL",
-                    "Build responsive, dynamic, and interactive web applications",
-                    "Implement REST APIs and integrate frontend with backend",
-                    "Deploy full-stack applications to cloud platforms",
-                    "Learn version control, CI/CD, and DevOps basics",
-                    "Complete real-world full-stack projects",
+                    "Develop responsive front-end applications with HTML, CSS, and JavaScript ",
+                    "Build server-side logic using Node.js and Express ",
+                    "Work with databases for data storage and management ",
+                    "Integrate front-end and back-end seamlessly ",
+                    "Apply real-world projects to simulate enterprise-grade applications ",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 mt-1" />
+                      <CheckCircle className="w-5 h-5 text-teal-600 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -299,37 +291,53 @@ export default function FullStackCourseDetails() {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
-            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Course Details</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Clock className="w-5 h-5 text-gray-400" />
-                  <span>{course.duration}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-700">
-                  <BarChart3 className="w-5 h-5 text-gray-400" />
-                  <span>{course.level}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-700">
-                  <BookOpen className="w-5 h-5 text-gray-400" />
-                  <span>{course.Modules_count} Modules</span>
-                </div>
-              </div>
-
-              <div className="space-y-3 mt-4">
-                <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
-                  <PhoneCall className="w-5 h-5" />
-                  Enroll Now
-                </button>
-                 <button
-        className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-        onClick={() => setShowModal(true)}
-      >
-        <Download size={20} />
-        Download Syllabus
-      </button>
-
+          <div className="lg:col-span-1">
+                      <div className="sticky top-8">
+                        {/* Price Card */}
+                        <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
+                          <div className="mb-6">
+                            <div className="flex items-baseline gap-2 mb-4">
+                              <Image
+                                src={course.course_enroll}
+                                alt={course.title}
+                                width={"400"}
+                                height={300}
+                                className="w-full h-60 object-cover"
+                              />
+                            </div>
+          
+                            <div className="space-y-3 mb-6">
+                              <div className="flex items-center gap-3 text-gray-900">
+                                <Clock className="w-5 h-5 text-gray-900" />
+                                <span>{course.course_duration}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-900">
+                                <Award className="w-5 h-5 text-gray-900" />
+                                <span>{course.internship}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-900">
+                                <BarChart3 className="w-5 h-5 text-gray-900" />
+                                <span>{course.level}</span>
+                              </div>
+                              <div className="flex items-center gap-3 text-gray-900">
+                                <BookOpen className="w-5 h-5 text-gray-900" />
+                                <span>{course.Modules_count} Modules</span>
+                              </div>
+                            </div>
+                          </div>
+          
+                          <div className="space-y-3">
+                            <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                              <PhoneCall className="w-5 h-5" />
+                              Enroll Now
+                            </button>
+                            <button
+                              className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                              onClick={() => setShowModal(true)}
+                            >
+                              <Download size={20} />
+                              Download Syllabus
+                            </button>
       {showModal && (
         <DownloadSyllabusModal
           onClose={() => setShowModal(false)}
@@ -350,6 +358,7 @@ export default function FullStackCourseDetails() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
