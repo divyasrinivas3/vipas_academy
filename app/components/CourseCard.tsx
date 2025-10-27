@@ -3,23 +3,21 @@
 import { Clock, Users } from 'lucide-react';
 import Link from 'next/link';
 import { Course } from '../lib/supabase';
-
+import Image from 'next/image';
 export default function CourseCard({ course }: { course: Course }) {
+    const defaultImage =
+    "https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=800";
+
   return (
     <div className="bg-white rounded-md overflow-hidden shadow-md border border-gray-100">
       {/* Course Image */}
-      <div className="relative">
-        <img
-          src={
-            // Default image fallback
-            course.category === 'SAP'
-              ? 'https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=800'
-              : course.category === 'Development'
-              ? 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800'
-              : 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800'
-          }
+            <div className="relative w-full h-64">
+        <Image
+          src={course.image || defaultImage}
           alt={course.title}
-          className="w-full h-64 object-cover" // 👈 exact dimension: 800x450 px
+          width={1600}
+          height={400}
+          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
         />
       </div>
 

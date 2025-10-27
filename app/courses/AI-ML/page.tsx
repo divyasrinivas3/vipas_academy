@@ -4,7 +4,8 @@ import MarqueeOne from "@/app/common/MarqueeOne"
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import AIMLCourseDetails from "./CourseDetailsArea";
-import RelatedCourses from "../sales-distribution/RelatedCourses";
+import RelatedCourses from "./related-courses";
+
 
 const AIMLCourse = () => {
   return (

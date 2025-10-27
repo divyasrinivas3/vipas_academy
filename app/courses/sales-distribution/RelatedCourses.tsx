@@ -7,10 +7,10 @@ import { fadeInUp, staggerContainer, staggerItem, cardHover } from '@/lib/animat
 
 const courses = [
   {
-    title: 'Material Management',
+    title: 'SAP MM',
     category: 'SAP',
     instructor: 'John Smith',
-    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/MM.png',
     students: 12450,
     duration: '6 months',
     level: 'Beginner',
@@ -20,7 +20,7 @@ const courses = [
     title: 'SAP FICO',
     category: 'SAP',
     instructor: 'Lisa Johnson',
-    image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/FICO.png',
     students: 9800,
     duration: '6 months',
     level: 'Intermediate',
@@ -30,7 +30,7 @@ const courses = [
     title: 'SAP PS',
     category: 'SAP',
     instructor: 'David Wilson',
-    image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/PS.png',
     students: 15000,
     duration: '6 months',
     level: 'Advanced',
@@ -86,7 +86,7 @@ export default function RelatedCourses() {
     {/* Overlay on Hover */}
     <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center px-4">
       <h3 className="text-xl font-bold text-white mb-3">{course.title}</h3>
-      <button className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-900 transition">
+      <button className="bg-teal-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-900 transition">
         Enroll Now
       </button>
     </div>

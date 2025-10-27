@@ -40,13 +40,12 @@ export default function SapOverview() {
               viewport={{ once: true }}
               variants={fadeInLeft}
               transition={{ delay: 0.2 }}
-              className="text-lg text-gray-900 mb-8 font-sans leading-relaxed"
+              className="text-lg text-gray-900 mb-8 font-sans leading-relaxed text-justify"
             >
-              At Vipas Academy, our SAP Training Program is designed to help students and professionals gain in-depth knowledge of real-time business processes using SAP ERP.
-              We provide hands-on training across key modules like FICO, MM, SD, HCM, and ABAP, guided by certified SAP consultants.
-              Through live projects and case studies, learners understand how SAP drives digital transformation in global enterprises.
-              Our goal is to make you job-ready, confident in using SAP tools, and prepared for both implementation and support roles.
-              Join us to build a rewarding career in the world of SAP consulting and enterprise solutions.
+              At Vipas Academy, our SAP Training Program opens the door to one of the most in-demand careers in today&apos;s digital world. Designed for students and professionals alike, this program helps you master real-time business processes using SAP S/4HANA - the intelligent ERP 
+              powering global enterprises. Get hands-on experience across key SAP modules like FICO, MM, SD, HCM, and ABAP, guided by certified consultants who&apos;ve worked on real implementation projects. 
+              Learn through live projects, case studies, and interactive sessions that make complex concepts easy to understand and apply. 
+              Our mission is simple — to make you job-ready, confident in SAP, and equipped for both implementation and support roles. Step into the world of SAP with Vipas Academy and start building a future where technology and business come together. 
             </motion.p>
 
             <motion.div

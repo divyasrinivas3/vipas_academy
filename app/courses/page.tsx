@@ -48,7 +48,7 @@ export default function CoursesPage() {
       </header>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-900 text-white py-12">
+      <div className="bg-gradient-to-r from-blue-900 to-blue-900 text-white py-12 max-w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-2">Explore Our Courses</h2>
           <p className="text-blue-100 text-lg">Discover the perfect course to advance your career</p>
@@ -56,10 +56,10 @@ export default function CoursesPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Search Bar */}
         <div className="mb-6">
-          <div className="relative max-w-md">
+          <div className="relative max-w-sm">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
@@ -83,7 +83,7 @@ export default function CoursesPage() {
           </aside>
 
           {/* Course Cards */}
-          <main className="lg:col-span-3">
+          <main className="lg:col-span-3 max-w-full">
             <div className="mb-6">
               <p className="text-gray-600">
                 Showing <span className="font-semibold text-gray-900">{filteredCourses.length}</span> {filteredCourses.length === 1 ? 'course' : 'courses'}
@@ -91,7 +91,7 @@ export default function CoursesPage() {
             </div>
 
             {filteredCourses.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-full">
                 {filteredCourses.map((course) => (
                   <CourseCard key={course.id} course={course} />
                 ))}

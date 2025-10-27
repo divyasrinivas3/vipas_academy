@@ -5,6 +5,8 @@ import MarqueeOne from "@/app/common/MarqueeOne"
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import SAPOFBDetails from "./CourseDetailsArea";
+import RelatedCourses from "./related-courses";
+
 
 const OffboardingCourse = () => {
   return (
@@ -12,6 +14,7 @@ const OffboardingCourse = () => {
       <Navbar />
       <SAPOFBDetails />         {/* SAP SD content */}
       <MarqueeOne style_2={true} />
+      <RelatedCourses/>
       <Footer />
     </>
   );

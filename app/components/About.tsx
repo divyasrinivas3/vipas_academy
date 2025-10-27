@@ -8,25 +8,25 @@ const features = [
   {
     icon: Users,
     title: 'Online & Offline Courses',
-    description: 'Interactive classroom & live sessions with expert instructors for personalized learning experience.',
+    description: 'Experience flexible learning that fits your life—join live online sessions or in-person classes led by seasoned SAP experts who make complex concepts simple and practical.',
     color: 'from-blue-900 to-blue-900',
   },
   {
     icon: Headphones,
-    title: '24/7 Support',
-    description: 'Round-the-clock assistance from our dedicated support team whenever you need help.',
+    title: '24/7 Learner Support',
+    description: 'We’ve got your back, always. Our dedicated support team is available 24/7 to guide you through every step of your learning journey.',
     color: 'from-teal-900 to-green-600',
   },
   {
     icon: Award,
-    title: 'Certification',
-    description: 'Earn recognized certificates upon course completion to boost your career prospects.',
+    title: 'Industry-Recognized Certification',
+    description: 'Earn a recognized certificate that validates your skills and gives you the confidence to stand out in your career.',
     color: 'from-purple-400 to-purple-600',
   },
   {
     icon: Briefcase,
     title: 'Internship & Capstone Project',
-    description: 'Gain real-world exposure through hands-on projects.',
+    description: 'Turn knowledge into experience through hands-on projects and real-world internships that prepare you for success from day one.',
     color: 'from-orange-400 to-orange-600',
   },
 ];
@@ -34,12 +34,12 @@ const features = [
 const benefits = [
   'Expert Mentors',
   'Online/Offline Courses',
-  'Real-World Training',
-  'Certification Preparation',
+  'Hands-On Projects',
+  'Certification Support',
   'Capstone Project',
   'Career Preparation',
-  'Placement Assistance',
-  'Internship & Certification'
+  'Career Readiness',
+  'Placement & Internship Assistance'
 ];
 
 export default function About() {
@@ -56,14 +56,15 @@ export default function About() {
             <span className="inline-block px-4 py-2 bg-blue-100 text-blue-900 rounded-full text-sm font-semibold mb-4">
               WHY CHOOSE US
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold font-sora text-gray-900 mb-6 leading-tight">
-              Transform Your Best Practice with
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-800">
-                Our Online Course
+            <h2 className="text-3xl md:text-3xl font-bold font-sora text-gray-900 mb-6 leading-tight">
+              Learn Skills. Master Your Career. Unlock Opportunities. 
+              <span className="block text-lg mt-6 text-gray-900 font-sora font-thin">
+                Step into a learning experience that&apos;s practical, flexible, and designed to get results. 
+                Our courses, crafted by industry experts, 
+                don&apos;t just teach - you do, apply, and achieve. 
               </span>
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              We provide a comprehensive learning platform designed to help you achieve your educational and career goals. Our courses are crafted by industry experts and tailored to meet the demands of the modern workforce.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -77,9 +78,9 @@ export default function About() {
                   className="flex items-center gap-3"
                 >
                   <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <CheckCircle className="w-4 h-4 text-teal-700" />
                   </div>
-                  <span className="text-gray-700">{benefit}</span>
+                  <span className="text-gray-900 text-justify">{benefit}</span>
                 </motion.div>
               ))}
             </div>

@@ -27,7 +27,7 @@ export default function Hero() {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <span className="inline-block px-4 py-2 bg-blue-900 text-white rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block px-4 py-2 bg-blue-900 text-white rounded-2xl text-sm font-semibold mb-4">
                 WELCOME TO VIPAS ACADEMY
               </span>
             </motion.div>
@@ -61,7 +61,7 @@ export default function Hero() {
               viewport={{ once: true }}
               variants={fadeInLeft}
               transition={{ delay: 0.2 }}
-              className="text-lg text-gray-800 mb-8 leading-relaxed"
+              className="text-lg text-gray-800 mb-8 leading-relaxed text-justify"
             >
               Our training is powered by expert mentors, hands-on projects, and career-driven learning paths. 
               Whether you&apos;re beginning your journey in IT or upgrading your skills for the next leap, 

@@ -5,6 +5,7 @@ import MarqueeOne from "@/app/common/MarqueeOne"
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import SAPPMGMDetails from "./CourseDetailsArea";
+import RelatedCourses from "./related-courses";
 
 const SFPMGMCourse = () => {
   return (
@@ -12,6 +13,7 @@ const SFPMGMCourse = () => {
       <Navbar />
       <SAPPMGMDetails />         {/* SAP SD content */}
       <MarqueeOne style_2={true} />
+      <RelatedCourses/>
       <Footer />
     </>
   );

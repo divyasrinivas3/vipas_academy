@@ -1,40 +1,46 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Clock } from 'lucide-react';
-import Link from 'next/link';
-import { fadeInUp, staggerContainer, staggerItem, cardHover } from '@/lib/animations';
+import { motion } from "framer-motion";
+import { Clock } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  fadeInUp,
+  staggerContainer,
+  staggerItem,
+  cardHover,
+} from "@/lib/animations";
 
 const courses = [
   {
-    title: 'SAP SD',
-    category: 'SAP',
-    instructor: 'John Smith',
-    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: "SAP SD",
+    category: "SAP",
+    instructor: "John Smith",
+    image: "/SD.png",
     students: 12450,
-    duration: '6 months',
-    level: 'Beginner',
-    url: '/courses/sales-distribution', // static course page
+    duration: "6 months",
+    level: "Beginner",
+    url: "/courses/sales-distribution", 
   },
   {
-    title: 'Data Analytics',
-    category: 'Data Analytics',
-    instructor: 'Lisa Johnson',
-    image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: "Data Analytics",
+    category: "Data Analytics",
+    instructor: "Lisa Johnson",
+    image: "/data-analytics.jpg",
     students: 9800,
-    duration: '6 months',
-    level: 'Intermediate',
-    url: '/courses/data-analytics',
+    duration: "6 months",
+    level: "Intermediate",
+    url: "/courses/data-analytics",
   },
   {
-    title: 'Full Stack Web Development',
-    category: 'Development',
-    instructor: 'David Wilson',
-    image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: "Full Stack Web Development",
+    category: "Development",
+    instructor: "David Wilson",
+    image: "/fullstack-development.jpg",
     students: 15000,
-    duration: '6 months',
-    level: 'Advanced',
-    url: '/courses/fullstack-development',
+    duration: "6 months",
+    level: "Advanced",
+    url: "/courses/fullstack-development",
   },
 ];
 
@@ -76,39 +82,46 @@ export default function PopularCourses() {
               whileHover={cardHover}
               className="group relative overflow-hidden rounded-2xl shadow-lg border border-gray-100 cursor-pointer"
             >
-        <Link href={course.url} className="block">
-  {/* Course Image */}
-  <div className="relative">
-    <img
-      src={course.image}
-      alt={course.title}
-      className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-    />
-    {/* Overlay on Hover */}
-    <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center px-4">
-      <h3 className="text-xl font-bold text-white mb-3">{course.title}</h3>
-      <button className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-900 transition">
-        Enroll Now
-      </button>
-    </div>
-  </div>
+              <Link href={course.url} className="block">
+                {/* Course Image */}
+                <div className="relative">
+                  <Image
+                    src={course.image}
+                    alt={course.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Overlay on Hover */}
+                  <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center px-4">
+                    <h3 className="text-xl font-bold text-white mb-3">
+                      {course.title}
+                    </h3>
+                    <button className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-900 transition">
+                      Enroll Now
+                    </button>
+                  </div>
+                </div>
 
-  {/* Static Info Section */}
-  <div className="p-6 bg-white">
-    <div className="flex items-center justify-between mb-4">
-      <span className="text-md bg-blue-900 text-white px-3 py-1 rounded-full">{course.category}</span>
-      <span className="text-gray-500 text-sm">{course.level}</span>
-    </div>
-    <div className="flex items-center justify-between text-gray-600 text-sm">
-      <div className="flex items-center gap-2">
-        <Clock className="w-4 h-4" />
-        <span>{course.duration}</span>
-      </div>
-      <span>{course.students.toLocaleString()} Students</span>
-    </div>
-  </div>
-</Link>
-
+                {/* Static Info Section */}
+                <div className="p-6 bg-white">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-md bg-blue-900 text-white px-3 py-1 rounded-full">
+                      {course.category}
+                    </span>
+                    <span className="text-gray-500 text-sm">
+                      {course.level}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-gray-600 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{course.duration}</span>
+                    </div>
+                    <span>{course.students.toLocaleString()} Students</span>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -124,12 +137,12 @@ export default function PopularCourses() {
         >
           <button>
             <Link
-    href="/courses"
-    className="bg-blue-900 text-white px-6 py-2 rounded-full text-md font-semibold hover:bg-blue-900 transition"
-  >
-    View All Courses
-  </Link>
-  </button>
+              href="/courses"
+              className="bg-blue-900 text-white px-6 py-2 rounded-full text-md font-semibold hover:bg-blue-900 transition"
+            >
+              View All Courses
+            </Link>
+          </button>
         </motion.div>
       </div>
     </section>
