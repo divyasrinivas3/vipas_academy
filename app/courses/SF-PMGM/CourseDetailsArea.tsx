@@ -373,8 +373,8 @@ export default function SAPPMGMDetails() {
                   {showModal && (
                     <DownloadSyllabusModal
                       onClose={() => setShowModal(false)}
-                      fileName="SAP-ABAP.pdf"
-                      displayName="SAP ABAP on HANA Course.pdf"
+                      fileName="SF-PMGM.pdf"
+                      displayName="SAP_SF_PMGM_Course.pdf"
                     />
                   )}
                 </div>

@@ -432,8 +432,8 @@ export default function SAPBTPDetails() {
                   {showModal && (
                     <DownloadSyllabusModal
                       onClose={() => setShowModal(false)}
-                      fileName="SAP-ABAP.pdf"
-                      displayName="SAP ABAP on HANA Course.pdf"
+                      fileName="SAP-BTP.pdf"
+                      displayName="SAP BTP Course.pdf"
                     />
                   )}
                 </div>

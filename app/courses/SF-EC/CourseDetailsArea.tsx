@@ -356,8 +356,8 @@ export default function SAPECDetails() {
                   {showModal && (
                     <DownloadSyllabusModal
                       onClose={() => setShowModal(false)}
-                      fileName="SAP-ABAP.pdf"
-                      displayName="SAP ABAP on HANA Course.pdf"
+                      fileName="SF-EC.pdf"
+                      displayName="SAP_SF_EC_Course.pdf"
                     />
                   )}
                 </div>

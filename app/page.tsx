@@ -9,6 +9,7 @@ import ContactForm from "@/app/components/contact";
 import SapOverview from "@/app/components/sap-overview";
 import WhyChooseUs from '@/app/components/study'; 
 import ScrollingMarquee from "@/app/components/scrolling";
+import OurSponsors from './components/our-sponsers';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <OnlineCourses />
       <WhyChooseUs />
       <Testimonials />
+      <OurSponsors />
       <ContactForm />
       <Footer />
     </main>

@@ -15,6 +15,9 @@ import {
   PhoneCall,
   Award,
   CheckCircle,
+  LocateIcon,
+  MapPin,
+  Mail,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
@@ -54,9 +57,9 @@ interface Course {
   instructor_name: string;
   instructor_title: string;
   instructor_image: string;
-  course_overview:string;
-  course_enroll:string;
-  internship:string;
+  course_overview: string;
+  course_enroll: string;
+  internship: string;
 }
 
 export default function AIMLDetailsArea() {
@@ -69,17 +72,19 @@ export default function AIMLDetailsArea() {
   const course: Course = {
     id: "5",
     title: "Artificial Intelligence & Machine Learning",
-    description:"Learn AI and ML concepts, algorithms, and applications to solve real-world business problems. Focus on supervised, unsupervised learning, and model deployment. ",
-    course_overview:"Master AI & ML with hands-on projects, from data preprocessing to building predictive models. Apply algorithms and analytics to solve practical problems across industries. ",
+    description:
+      "Learn AI and ML concepts, algorithms, and applications to solve real-world business problems. Focus on supervised, unsupervised learning, and model deployment. ",
+    course_overview:
+      "Master AI & ML with hands-on projects, from data preprocessing to building predictive models. Apply algorithms and analytics to solve practical problems across industries. ",
     price: 299,
     course_duration: "3 Months Course",
     level: "Beginner to Advanced",
     Modules_count: 10,
     students_count: 1890,
-    course_enroll:"/Enroll-Now.png",
+    course_enroll: "/Enroll-Now.png",
     rating: 4.9,
     reviews_count: 340,
-    internship:"3 Months Internship",
+    internship: "3 Months Internship",
     category: "AI / ML",
     language: "English",
     image_url:
@@ -418,8 +423,8 @@ export default function AIMLDetailsArea() {
   ];
 
   return (
-    <div className="min-h-screen mt-10 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen mt-9 bg-white">
+      <div className="max-w-7xl mt-10 mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Breadcrumb items={breadcrumbItems} />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -465,7 +470,7 @@ export default function AIMLDetailsArea() {
                   <Users className="w-5 h-5" />
                   <span>{course.students_count.toLocaleString()} students</span>
                 </div> */}
-                </div>
+                  </div>
                 </div>
               </div>
 
@@ -687,7 +692,7 @@ export default function AIMLDetailsArea() {
                   {showModal && (
                     <DownloadSyllabusModal
                       onClose={() => setShowModal(false)}
-                      fileName="AIML.pdf" // 👈 change this dynamically per course
+                      fileName="AI-ML.pdf" // 👈 change this dynamically per course
                       displayName="AIML_Course.pdf" // optional pretty name
                     />
                   )}
@@ -695,14 +700,46 @@ export default function AIMLDetailsArea() {
               </div>
 
               {/* Share Course */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Share this course:
+              {/* Contact Us Box */}
+              <div className="bg-gray-50 border border-gray-400 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-6">
+                  Contact Us
                 </h3>
-                <button className="w-full border-2 border-gray-300 hover:border-theme-teal text-gray-700 hover:text-theme-teal font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
-                  <Share2 className="w-5 h-5" />
-                  Share Course
-                </button>
+
+                <div className="space-y-5">
+                  {/* Phone */}
+                  <div className="flex items-start gap-4">
+                    <PhoneCall className="w-6 h-6 text-blue-900 mt-1" />
+                    <div>
+                      <p className="text-gray-500 text-sm">For Support</p>
+                      <p className="text-gray-900 font-semibold text-base">
+                        +91 99666 52099
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex items-start gap-4">
+                    <Mail className="w-6 h-6 text-blue-900 mt-1" />
+                    <div>
+                      <p className="text-gray-500 text-sm">Send Message</p>
+                      <p className="text-gray-900 font-semibold text-base break-all">
+                        vipasacademy@gmail.com
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Location */}
+                  <div className="flex items-start gap-4">
+                    <MapPin className="w-6 h-6 text-blue-900 mt-1" />
+                    <div>
+                      <p className="text-gray-500 text-sm">Our Location</p>
+                      <p className="text-gray-900 font-semibold text-base">
+                        Andhra Pradesh , India, 517501
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

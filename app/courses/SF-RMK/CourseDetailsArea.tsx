@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Clock,
   BarChart3,
@@ -18,10 +19,13 @@ import {
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
 import Image from "next/image";
+import Link from "next/link";
 export default function SAPRMKDetails() {
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
-  const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
+  const [expandedSections, setExpandedSections] = useState<Set<number>>(
+    new Set()
+  );
 
   const toggleSection = (sectionId: number) => {
     const newExpanded = new Set(expandedSections);
@@ -29,14 +33,31 @@ export default function SAPRMKDetails() {
     else newExpanded.add(sectionId);
     setExpandedSections(newExpanded);
   };
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleClick = () => {
+    if (pathname === "/") {
+      // 👇 If already on Home page, just scroll
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // 👇 If on another page, redirect to Home + hash
+      router.push("/#contact");
+    }
+  };
 
   const course = {
     title: "SAP SuccessFactors Recruiting Marketing (RMK) Course",
-    description:"Learn to design and manage SAP RMK career sites to attract, engage, and convert candidates efficiently. Focus on branding, candidate experience, and data-driven recruitment marketing strategies. ",
-    course_overview:"Master SAP RMK to build effective career portals, manage candidate interactions, and optimize recruitment marketing campaigns. Apply practical exercises to simulate real-world recruitment scenarios. ",
+    description:
+      "Learn to design and manage SAP RMK career sites to attract, engage, and convert candidates efficiently. Focus on branding, candidate experience, and data-driven recruitment marketing strategies. ",
+    course_overview:
+      "Master SAP RMK to build effective career portals, manage candidate interactions, and optimize recruitment marketing campaigns. Apply practical exercises to simulate real-world recruitment scenarios. ",
     price: 159.99,
     course_duration: "3 Months Course",
-    internship:"3 Months",
+    internship: "3 Months",
     level: "Intermediate",
     Modules_count: 11,
     students_count: 900,
@@ -49,7 +70,7 @@ export default function SAPRMKDetails() {
     instructor_title: "SAP Certified SuccessFactors Consultant",
     instructor_image:
       "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100",
-     course_enroll:"/Enroll-Now.png",
+    course_enroll: "/Enroll-Now.png",
   };
 
   const curriculum = [
@@ -198,9 +219,7 @@ export default function SAPRMKDetails() {
 
               <div className="flex flex-wrap items-center gap-6 mb-6">
                 <div className="flex items-center gap-2">
-                  <div className="flex">
-                    
-                  </div>
+                  <div className="flex"></div>
                   <span className="font-semibold text-gray-900"></span>
                 </div>
               </div>
@@ -243,9 +262,13 @@ export default function SAPRMKDetails() {
             {activeTab === "overview" ? (
               <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{course.course_overview}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {course.course_overview}
+                </p>
 
-                <h4 className="text-xl font-bold mb-4 mt-8">What You&apos;ll Learn</h4>
+                <h4 className="text-xl font-bold mb-4 mt-8">
+                  What You&apos;ll Learn
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
                     "Configure RMK career sites and templates ",
@@ -263,7 +286,9 @@ export default function SAPRMKDetails() {
               </div>
             ) : (
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Course Curriculum</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Course Curriculum
+                </h3>
                 <div className="space-y-4">
                   {curriculum.map((section) => (
                     <div
@@ -277,12 +302,18 @@ export default function SAPRMKDetails() {
                         <div className="flex items-center gap-4">
                           <ChevronDown
                             className={`w-5 h-5 text-gray-600 transition-transform ${
-                              expandedSections.has(section.id) ? "rotate-180" : ""
+                              expandedSections.has(section.id)
+                                ? "rotate-180"
+                                : ""
                             }`}
                           />
-                          <h4 className="font-semibold text-gray-900">{section.section_title}</h4>
+                          <h4 className="font-semibold text-gray-900">
+                            {section.section_title}
+                          </h4>
                         </div>
-                        <span className="text-sm text-gray-500">{section.Modules.length} Modules</span>
+                        <span className="text-sm text-gray-500">
+                          {section.Modules.length} Modules
+                        </span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <div className="divide-y divide-gray-100">
@@ -305,84 +336,89 @@ export default function SAPRMKDetails() {
           </div>
 
           {/* Sidebar */}
-           <div className="lg:col-span-1">
-                                <div className="sticky top-8">
-                                  <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
-                                    <div className="mb-6">
-                                      <Image
-                                        src={course.course_enroll}
-                                        alt={course.title}
-                                        width={1000}
-                                        height={400}
-                                        className="w-full h-60 object-cover rounded-lg"
-                                      />
-                                      <div className="space-y-3 mb-6 mt-4">
-                                        <div className="flex items-center gap-3 text-gray-700">
-                                          <Clock className="w-5 h-5 text-gray-400" />
-                                          <span>{course.course_duration}</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 text-gray-700">
-                                          <Award className="w-5 h-5 text-gray-400" />
-                                          <span>{course.internship} Internship</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 text-gray-700">
-                                          <BarChart3 className="w-5 h-5 text-gray-400" />
-                                          <span>{course.level}</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 text-gray-700">
-                                          <BookOpen className="w-5 h-5 text-gray-400" />
-                                          <span>{course.Modules_count} Modules</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                    
-                                    <div className="space-y-3">
-                                      <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
-                                        <PhoneCall className="w-5 h-5" />
-                                        Enroll Now
-                                      </button>
-                                      <button
-                                        className="bg-teal-600 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-                                        onClick={() => setShowModal(true)}
-                                      >
-                                        <Download size={20} />
-                                        Download Syllabus
-                                      </button>
-                    
-                                      {showModal && (
-                                        <DownloadSyllabusModal
-                                          onClose={() => setShowModal(false)}
-                                          fileName="SAP-ABAP.pdf"
-                                          displayName="SAP ABAP on HANA Course.pdf"
-                                        />
-                                      )}
-                                    </div>
-                                  </div>
-                    
-                                  <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-4">
-                                      This Course Includes:
-                                    </h3>
-                                    <div className="space-y-3">
-                                      {[
-                                        "Lifetime access",
-                                        "Downloadable resources",
-                                        "Certificate of completion",
-                                        "Access on mobile and desktop",
-                                      ].map((item, i) => (
-                                        <div
-                                          key={i}
-                                          className="flex items-center gap-3 text-gray-700"
-                                        >
-                                          <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
-                                          <span>{item}</span>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
+          <div className="lg:col-span-1">
+            <div className="sticky top-8">
+              <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
+                <div className="mb-6">
+                  <Image
+                    src={course.course_enroll}
+                    alt={course.title}
+                    width={1000}
+                    height={400}
+                    className="w-full h-60 object-cover rounded-lg"
+                  />
+                  <div className="space-y-3 mb-6 mt-4">
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <Clock className="w-5 h-5 text-gray-400" />
+                      <span>{course.course_duration}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <Award className="w-5 h-5 text-gray-400" />
+                      <span>{course.internship} Internship</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <BarChart3 className="w-5 h-5 text-gray-400" />
+                      <span>{course.level}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <BookOpen className="w-5 h-5 text-gray-400" />
+                      <span>{course.Modules_count} Modules</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <button
+                    onClick={handleClick}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
+                    <PhoneCall className="w-5 h-5" />
+                    Enroll Now
+                  </button>
+                  <button
+                    className="bg-teal-600 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                    onClick={() => setShowModal(true)}
+                  >
+                    <Download size={20} />
+                    Download Syllabus
+                  </button>
+
+                  {showModal && (
+                    <DownloadSyllabusModal
+                      onClose={() => setShowModal(false)}
+                      fileName="SF_RMK.pdf"
+                      displayName="SAP_SF_RMK_Course.pdf"
+                    />
+                  )}
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  This Course Includes:
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    "Lifetime access",
+                    "Downloadable resources",
+                    "Certificate of completion",
+                    "Access on mobile and desktop",
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 text-gray-700"
+                    >
+                      <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Share this course:</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  Share this course:
+                </h3>
                 <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <Share2 className="w-5 h-5" />
                   Share Course

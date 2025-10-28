@@ -380,8 +380,8 @@ export default function SAPRCMDetails() {
                             {showModal && (
                               <DownloadSyllabusModal
                                 onClose={() => setShowModal(false)}
-                                fileName="SAP-ABAP.pdf"
-                                displayName="SAP ABAP on HANA Course.pdf"
+                                fileName="SF_RCM.pdf"
+                                displayName="SF_RCM_Course.pdf"
                               />
                             )}
                           </div>
