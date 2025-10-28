@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, BookOpen } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,14 +42,24 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 font-sora text-md bg-white/95 backdrop-blur-sm shadow-sm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-900 rounded-lg flex items-center justify-center">
-              <BookOpen className="w-6 h-6 text-white" />
+      <div className="container mx-auto px-8 sm:px-12 lg:px-20">
+        <div className="flex items-center justify-between h-150">
+          {/* ✅ Logo Section */}
+          <div
+            className="flex items-center space-x-3 cursor-pointer pl-20"
+            onClick={() => goToPage("/")}
+          >
+            {/* Logo Image */}
+            <div className="relative w-24 h-24">
+              <Image
+                src="/vipas-logo.png"
+                alt="Vipas Academy Logo"
+                fill
+                className="object-contain rounded-lg"
+                priority
+              />
             </div>
-            <span className="text-2xl font-bold text-gray-900">VIPAS ACADEMY</span>
+            
           </div>
 
           {/* Desktop Menu */}
@@ -72,7 +83,10 @@ export default function Navbar() {
                 </button>
               )
             )}
-            <button  onClick={() => goToSection("/", "contact")} className="bg-gradient-to-r from-blue-900 to-blue-900 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <button
+              onClick={() => goToSection("/", "contact")}
+              className="bg-gradient-to-r from-blue-900 to-blue-900 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+            >
               Contact Us
             </button>
           </div>
@@ -114,11 +128,11 @@ export default function Navbar() {
               )
             )}
             <button
-      onClick={() => goToSection("/", "contact")}
-      className="w-full mt-3 bg-gradient-to-r from-blue-900 to-blue-900 text-white px-6 py-2.5 rounded-full font-medium"
-    >
-      Contact Us
-    </button>
+              onClick={() => goToSection("/", "contact")}
+              className="w-full mt-3 bg-gradient-to-r from-blue-900 to-blue-900 text-white px-6 py-2.5 rounded-full font-medium"
+            >
+              Contact Us
+            </button>
           </motion.div>
         )}
       </div>

@@ -32,7 +32,7 @@ export const courses: Course[] = [
   { id: '10', title: 'SF RCM', category_id: '1', course_duration: '8 Weeks', category: 'SAP',url:'courses/SF-RCM',image: '/RCM.png' },
   { id: '11', title: 'SF RMK', category_id: '1', course_duration: '8 Weeks', category: 'SAP',url:'courses/SF-RMK',image: '/RMK.png' },
   { id: '12', title: 'SF OMB', category_id: '1', course_duration: '8 Weeks',  category: 'SAP',url:'courses/offboarding',image: '/ONB.png' },
-  { id: '13', title: 'SF OFB', category_id: '1', course_duration: '8 Weeks',  category: 'SAP',url:'courses/onboarding',image: '/OFB.png' },
+  { id: '13', title: 'SF OFB', category_id: '1', course_duration: '8 Weeks',  category: 'SAP',url:'courses/onboarding-course',image: '/OFB.png' },
   { id: '14', title: 'Full Stack Development', category_id: '2', course_duration: '16 Weeks', category: 'Development',url:'courses/fullstack-development',image: '/fullstack-development.jpg' },
   { id: '15', title: 'Excel & Power BI', category_id: '3', course_duration: '6 Weeks', category: 'Data Analytics',url:'courses/data-analytics',image: '/data-analytics.jpg' },
   { id: '16', title: 'SAC', category_id: '3', course_duration: '8 Weeks', category: 'Data Analytics', url:'courses/SAC',image: '/SAC.jpg'},

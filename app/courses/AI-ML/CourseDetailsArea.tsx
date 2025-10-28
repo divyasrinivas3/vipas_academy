@@ -14,6 +14,7 @@ import {
   Users,
   PhoneCall,
   Award,
+  CheckCircle,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
@@ -555,7 +556,7 @@ export default function AIMLDetailsArea() {
                       "Prepare for SAP MM certification and practical job scenarios.",
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-theme-teal mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-theme-teal mt-1 flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </div>
                     ))}
