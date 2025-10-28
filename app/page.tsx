@@ -3,7 +3,6 @@ import Hero from '@/app/components/Hero';
 import TopCategories from '@/app/components/TopCategories';
 import About from '@/app/components/About';
 import OnlineCourses from '@/app/components/OnlineCourses';
-import BestSellingCourses from '@/app/components/BestSellingCourses';
 import Testimonials from '@/app/components/Testimonials';
 import Footer from '@/app/components/Footer';
 import ContactForm from "@/app/components/contact";
