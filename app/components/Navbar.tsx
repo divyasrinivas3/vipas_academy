@@ -49,7 +49,6 @@ export default function Navbar() {
             className="flex items-center space-x-3 cursor-pointer pl-20"
             onClick={() => goToPage("/")}
           >
-            {/* Logo Image */}
             <div className="relative w-24 h-24">
               <Image
                 src="/vipas-logo.png"
@@ -59,10 +58,9 @@ export default function Navbar() {
                 priority
               />
             </div>
-            
           </div>
 
-          {/* Desktop Menu */}
+          {/* ✅ Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) =>
               link.sectionId ? (
@@ -84,14 +82,14 @@ export default function Navbar() {
               )
             )}
             <button
-              onClick={() => goToSection("/", "contact")}
+              onClick={() => goToPage("/contact")}
               className="bg-gradient-to-r from-blue-900 to-blue-900 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Contact Us
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* ✅ Mobile Menu Toggle */}
           <button
             className="md:hidden text-gray-700"
             onClick={() => setIsOpen(!isOpen)}
@@ -100,7 +98,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* ✅ Mobile Menu */}
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -128,7 +126,7 @@ export default function Navbar() {
               )
             )}
             <button
-              onClick={() => goToSection("/", "contact")}
+              onClick={() => goToPage("/contact")}
               className="w-full mt-3 bg-gradient-to-r from-blue-900 to-blue-900 text-white px-6 py-2.5 rounded-full font-medium"
             >
               Contact Us

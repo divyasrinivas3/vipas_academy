@@ -1,24 +1,29 @@
 import { z } from "zod";
-import {
-  educationOptions,
-  planOfFutureOptions,
-  careerOptionsMap,
-  Education,
-  PlanOfFuture,
-  CoachingProgram,
-} from "../types/form";
-
-const coachingPrograms = Object.values(careerOptionsMap).flat() as CoachingProgram[];
 
 export const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters long"),
+  name: z.string().min(2, { message: "Please enter your full name" }),
   contact: z
     .string()
-    .regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit Indian mobile number"),
-  email: z.string().email("Invalid email address"),
-  education: z.enum(educationOptions as [Education, ...Education[]]),
-  planOfFuture: z.enum(planOfFutureOptions as [PlanOfFuture, ...PlanOfFuture[]]),
-  careerPath: z.enum(["", ...coachingPrograms] as ["" | CoachingProgram, ...("" | CoachingProgram)[]]),
+    .regex(/^[6-9]\d{9}$/, { message: "Enter a valid 10-digit contact number" }),
+  email: z.string().email({ message: "Enter a valid email address" }),
+  education: z.enum(["B.Tech", "B.E", "M.Tech", "MBA", "Degree"], {
+    errorMap: () => ({ message: "Please select your education" }),
+  }),
+  planOfFuture: z.enum(
+    [
+      "SAP Consultant",
+      "Software Developer",
+      "Data Analyst",
+      "Business Analyst",
+      "Project Manager",
+      "Programmer",
+    ],
+    { errorMap: () => ({ message: "Please select your plan of future" }) }
+  ),
+  careerPath: z.string().min(1, { message: "Please select your career path" }),
+  inquiryType: z.enum(["Demo", "Career Guidance", "Course"], {
+    errorMap: () => ({ message: "Please select an inquiry type" }),
+  }),
 });
 
 export type ContactFormSchema = z.infer<typeof contactFormSchema>;
