@@ -5,23 +5,19 @@ import { motion } from "framer-motion";
 
 const sponsors = [
   "/vipastechno.png",
-//   "/SAVICC.png",
+  "/SAVIC.png",
   "/YASH.png",
-    "/vipastechno.png",
 ];
 
 export default function OurSponsors() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50 bg-gray-200">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
         {/* ---------- LEFT SIDE TEXT ---------- */}
         <div>
-          <p className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
-            Our Sponsor
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-teal-600 mt-3 leading-snug">
-            Get in touch with the companies who
-            Collaboration with us
+          
+          <h2 className="text-3xl md:text-6xl font-bold text-blue-900 mt-3  leading-snug">
+           Our Collaborators
           </h2>
         </div>
 
