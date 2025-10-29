@@ -96,22 +96,31 @@ export default function ContactPage() {
 
       {/* Hero Section */}
       <section
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[60vh] bg-cover bg-center flex items-center justify-center mt-9"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1522205408450-add114ad53fe?auto=format&fit=crop&w=1950&q=80')",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <h1 className="relative text-5xl font-bold text-white z-10">
+        <h1 className="relative text-6xl font-bold text-white z-10">
           Contact Us
         </h1>
       </section>
-
+  
       {/* Contact Details + Form */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Get Started with Vipas Academy Today
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Ready to transform your career? Fill out the form below.
+          </p>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
             {/* Left Side - Info */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-8">
