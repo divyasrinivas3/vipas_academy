@@ -73,42 +73,43 @@ export default function Footer() {
             <div className="flex items-center space-x-4 mb-8">
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 justify-center"> {/* increased size */}
                 <Image
-                  src="/vipas_logo_bg.png" // 👈 place logo here: public/images/vipas-logo.png
+                  src="/vipas_logo_bg.png" 
                   alt="Vipas Academy Logo"
                   fill
                   className="object-contain"
                   priority
                 />
               </div>
+              <span className="text-2xl sm:text-3xl font-bold text-white">Vipas Academy</span>
             </div>
 
-            <p className="text-gray-400 mb-6 leading-relaxed text-left">
-              Empowering learners worldwide with high-quality online education. Transform
-              your career and achieve your goals with our expert-led courses.
+            <p className="text-gray-400 mb-6 max-w-xl leading-relaxed text-left font-semibold">
+              Empowering learners worldwide with high-quality online education. 
+              Transform your career and achieve your goals with our expert-led courses.
             </p>
 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-blue-500" />
+                  <Mail className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-sm sm:text-base break-all">
+                <span className="text-sm sm:text-base break-all font-semibold">
                   Vipasacademy1@gmail.com
                 </span>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5 text-blue-500" />
+                  <Phone className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-sm sm:text-base">+91 99666 52099</span>
+                <span className="text-sm sm:text-base font-semibold">+91 99666 52099</span>
               </div>
 
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-blue-500" />
+                  <MapPin className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-sm sm:text-base text-left leading-relaxed">
+                <span className="text-sm sm:text-base text-left leading-relaxed font-semibold max-w-lg">
                   Door No. 19-8-112/D, Second Floor, Kora Towers, Hathiramji Colony, near
                   Annamiah Circle, Air Bypass Road, Tirupati, 517501
                 </span>
@@ -118,7 +119,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <motion.div variants={staggerItem}>
-            <h3 className="text-white text-xl font-bold text-center mb-4">Quick Links</h3>
+            <h3 className="text-white text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>

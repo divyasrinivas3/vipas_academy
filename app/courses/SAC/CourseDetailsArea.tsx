@@ -18,7 +18,9 @@ import {
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 export default function SACSAPPlanningDetails() {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
   const [expandedSections, setExpandedSections] = useState<Set<number>>(
@@ -41,7 +43,7 @@ export default function SACSAPPlanningDetails() {
       "Master SAC to create interactive dashboards, perform advanced analytics, and integrate data from multiple sources. Apply real-time projects to simulate decision-making scenarios.",
     course_duration: "3 Months course",
     internship: "3 Months",
-    course_enroll:"/Enroll-Now.png",
+    course_enroll: "/Enroll-Now.png",
     level: "Intermediate",
     Modules_count: 13,
     students_count: 1200,
@@ -390,7 +392,7 @@ export default function SACSAPPlanningDetails() {
                       className="w-full h-60 object-cover"
                     />
                   </div>
- 
+
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-3 text-gray-900">
                       <Clock className="w-5 h-5 text-gray-900" />
@@ -412,7 +414,10 @@ export default function SACSAPPlanningDetails() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
@@ -455,16 +460,6 @@ export default function SACSAPPlanningDetails() {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Share this course:
-                </h3>
-                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
-                  <Share2 className="w-5 h-5" />
-                  Share Course
-                </button>
               </div>
             </div>
           </div>

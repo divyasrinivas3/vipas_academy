@@ -18,8 +18,10 @@ import {
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function SAPFioriDetails() {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
   const [expandedSections, setExpandedSections] = useState<Set<number>>(
@@ -35,8 +37,10 @@ export default function SAPFioriDetails() {
 
   const course = {
     title: "SAP FIORI & UI5 Development",
-    description:"Master the art of building user-friendly, responsive enterprise applications using SAP Fiori and UI5. Focus on design, usability, and real-time deployment. ",
-    course_overview:"Learn Fiori Elements, freestyle apps, OData integration, and Launchpad deployment. Build enterprise-ready applications with hands-on exercises reflecting real business needs.",
+    description:
+      "Master the art of building user-friendly, responsive enterprise applications using SAP Fiori and UI5. Focus on design, usability, and real-time deployment. ",
+    course_overview:
+      "Learn Fiori Elements, freestyle apps, OData integration, and Launchpad deployment. Build enterprise-ready applications with hands-on exercises reflecting real business needs.",
     price: 199.99,
     course_duration: "3 Months Course",
     internship: "3 Months internship",
@@ -138,7 +142,7 @@ export default function SAPFioriDetails() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Breadcrumb items={breadcrumbItems} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Section */}
           <div className="lg:col-span-2">
             <div className="mb-8 p-10">
@@ -329,7 +333,10 @@ export default function SAPFioriDetails() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
@@ -372,16 +379,6 @@ export default function SAPFioriDetails() {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Share this course:
-                </h3>
-                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
-                  <Share2 className="w-5 h-5" />
-                  Share Course
-                </button>
               </div>
             </div>
           </div>

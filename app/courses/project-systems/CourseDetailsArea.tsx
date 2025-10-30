@@ -14,15 +14,19 @@ import {
   Download,
   Share2,
   Award,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
+import { useRouter } from "next/navigation";
 
 export default function SAPPSDetails() {
-    const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
-  const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
+  const [expandedSections, setExpandedSections] = useState<Set<number>>(
+    new Set()
+  );
 
   const toggleSection = (sectionId: number) => {
     const newExpanded = new Set(expandedSections);
@@ -33,8 +37,10 @@ export default function SAPPSDetails() {
 
   const course = {
     title: "SAP Project Systems",
-    description:"Plan, execute, and monitor projects with SAP PS. Learn WBS structures, networks, budgeting, and billing to ensure projects meet deadlines and budgets efficiently. ",
-    course_overview:"Master SAP PS to manage project lifecycles end-to-end. Gain practical experience in planning, budgeting, procurement, and integrating with other SAP modules to optimize project performance.",
+    description:
+      "Plan, execute, and monitor projects with SAP PS. Learn WBS structures, networks, budgeting, and billing to ensure projects meet deadlines and budgets efficiently. ",
+    course_overview:
+      "Master SAP PS to manage project lifecycles end-to-end. Gain practical experience in planning, budgeting, procurement, and integrating with other SAP modules to optimize project performance.",
     course_duration: "3 Months Course",
     level: "Beginner to Advanced",
     Modules_count: 12,
@@ -48,8 +54,8 @@ export default function SAPPSDetails() {
     instructor_title: "SAP Certified PS Consultant",
     instructor_image:
       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100",
-    internship:"3 Months",
-    image_enroll:"/Enroll-Now.png"
+    internship: "3 Months",
+    image_enroll: "/Enroll-Now.png",
   };
 
   const curriculum = [
@@ -189,12 +195,13 @@ export default function SAPPSDetails() {
 
   return (
     <div className="min-h-screen mt-9 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Breadcrumb items={breadcrumbItems} />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <Breadcrumb items={breadcrumbItems} />
+    
+            <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-8">
+              {/* Main content */}
+              <div className="lg:col-span-2">
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Section */}
-          <div className="lg:col-span-2">
             <div className="mb-8 p-10">
               <div className="mb-4">
                 <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 text-sm font-medium rounded-md">
@@ -222,7 +229,9 @@ export default function SAPPSDetails() {
                       />
                     ))}
                   </div>
-                  <span className="font-semibold text-gray-900">{course.rating}</span>
+                  <span className="font-semibold text-gray-900">
+                    {course.rating}
+                  </span>
                 </div>
               </div>
 
@@ -264,9 +273,13 @@ export default function SAPPSDetails() {
             {activeTab === "overview" ? (
               <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{course.course_overview}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {course.course_overview}
+                </p>
 
-                <h4 className="text-xl font-bold mb-4 mt-8">What You’ll Learn</h4>
+                <h4 className="text-xl font-bold mb-4 mt-8">
+                  What You’ll Learn
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
                     "Create and manage WBS, networks, and activities ",
@@ -284,7 +297,9 @@ export default function SAPPSDetails() {
               </div>
             ) : (
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Course Curriculum</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Course Curriculum
+                </h3>
                 <div className="space-y-4">
                   {curriculum.map((section) => (
                     <div
@@ -298,12 +313,18 @@ export default function SAPPSDetails() {
                         <div className="flex items-center gap-4">
                           <ChevronDown
                             className={`w-5 h-5 text-gray-600 transition-transform ${
-                              expandedSections.has(section.id) ? "rotate-180" : ""
+                              expandedSections.has(section.id)
+                                ? "rotate-180"
+                                : ""
                             }`}
                           />
-                          <h4 className="font-semibold text-gray-900">{section.section_title}</h4>
+                          <h4 className="font-semibold text-gray-900">
+                            {section.section_title}
+                          </h4>
                         </div>
-                        <span className="text-sm text-gray-500">{section.Modules.length} Modules</span>
+                        <span className="text-sm text-gray-500">
+                          {section.Modules.length} Modules
+                        </span>
                       </button>
                       {expandedSections.has(section.id) && (
                         <div className="divide-y divide-gray-100">
@@ -326,7 +347,7 @@ export default function SAPPSDetails() {
           </div>
 
           {/* Sidebar */}
-         <div className="lg:col-span-1">
+          <div className="lg:col-span-1">
             <div className="sticky top-8">
               {/* Price Card */}
               <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
@@ -334,12 +355,12 @@ export default function SAPPSDetails() {
                   <div className="flex items-baseline gap-2 mb-4">
                     <span className="text-4xl font-bold text-gray-900">
                       <img
-                      src={course.image_enroll}
-                      alt={course.title}
-                      width={"400"}
-                      height={300}
-                      className="w-full h-96 object-cover"
-                    />
+                        src={course.image_enroll}
+                        alt={course.title}
+                        width={"400"}
+                        height={300}
+                        className="w-full h-96 object-cover"
+                      />
                     </span>
                   </div>
                   <div className="space-y-3 mb-6">
@@ -347,7 +368,7 @@ export default function SAPPSDetails() {
                       <Clock className="w-5 h-5 text-gray-400" />
                       <span>{course.course_duration}</span>
                     </div>
-                      <div className="flex items-center gap-3 text-gray-700">
+                    <div className="flex items-center gap-3 text-gray-700">
                       <Award className="w-5 h-5 text-gray-400" />
                       <span>{course.internship} Internship</span>
                     </div>
@@ -363,30 +384,35 @@ export default function SAPPSDetails() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
                   <button
-        className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-        onClick={() => setShowModal(true)}
-      >
-        <Download size={20} />
-        Download Syllabus
-      </button>
+                    className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                    onClick={() => setShowModal(true)}
+                  >
+                    <Download size={20} />
+                    Download Syllabus
+                  </button>
 
-      {showModal && (
-        <DownloadSyllabusModal
-          onClose={() => setShowModal(false)}
-          fileName="SAPPS-Course.pdf" // 👈 change this dynamically per course
-          displayName="SAP_Project_Systems.pdf" // optional pretty name
-        />
-      )}
+                  {showModal && (
+                    <DownloadSyllabusModal
+                      onClose={() => setShowModal(false)}
+                      fileName="SAPPS-Course.pdf" // 👈 change this dynamically per course
+                      displayName="SAP_Project_Systems.pdf" // optional pretty name
+                    />
+                  )}
                 </div>
               </div>
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">This Course Includes:</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  This Course Includes:
+                </h3>
                 <div className="space-y-3">
                   {[
                     "Lifetime access",
@@ -395,7 +421,10 @@ export default function SAPPSDetails() {
                     "Certificate of completion",
                     "Access on mobile and desktop",
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-gray-700">
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 text-gray-700"
+                    >
                       <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />
                       <span>{item}</span>
                     </div>
@@ -404,7 +433,9 @@ export default function SAPPSDetails() {
               </div>
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Share this course:</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  Share this course:
+                </h3>
                 <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                   <Share2 className="w-5 h-5" />
                   Share Course

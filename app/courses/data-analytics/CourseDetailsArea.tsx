@@ -18,7 +18,9 @@ import {
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 export default function DataAnalyticsCourseDetails() {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
   const [expandedSections, setExpandedSections] = useState<Set<number>>(
@@ -33,12 +35,14 @@ export default function DataAnalyticsCourseDetails() {
   };
 
   const course = {
-    title: "Data Analytics Course",
-    description:"Learn advanced Excel and Power BI techniques to analyze, visualize, and interpret data effectively. Focus on dashboards, PivotTables, Power Query, and interactive reporting. ",
-    course_overview:"Master Excel and Power BI for business analytics. Gain hands-on experience with data cleaning, visualization, and reporting to make data-driven decisions. ",
+    title: "Data Analytics with Excel & Power BI",
+    description:
+      "Learn advanced Excel and Power BI techniques to analyze, visualize, and interpret data effectively. Focus on dashboards, PivotTables, Power Query, and interactive reporting. ",
+    course_overview:
+      "Master Excel and Power BI for business analytics. Gain hands-on experience with data cleaning, visualization, and reporting to make data-driven decisions. ",
     course_duration: "3 Months Course",
-    internship:"3 Months internship",
-    course_enroll:"/Enroll-Now.png",
+    internship: "3 Months internship",
+    course_enroll: "/Enroll-Now.png",
     level: "Beginner to Advanced",
     Modules_count: 18,
     students_count: 1500,
@@ -428,52 +432,55 @@ export default function DataAnalyticsCourseDetails() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-                                <div className="sticky top-8">
-                                  {/* Price Card */}
-                                  <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
-                                    <div className="mb-6">
-                                      <div className="flex items-baseline gap-2 mb-4">
-                                        <Image
-                                          src={course.course_enroll}
-                                          alt={course.title}
-                                          width={"400"}
-                                          height={300}
-                                          className="w-full h-60 object-cover"
-                                        />
-                                      </div>
-                    
-                                      <div className="space-y-3 mb-6">
-                                        <div className="flex items-center gap-3 text-gray-900">
-                                          <Clock className="w-5 h-5 text-gray-900" />
-                                          <span>{course.course_duration}</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 text-gray-900">
-                                          <Award className="w-5 h-5 text-gray-900" />
-                                          <span>{course.internship}</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 text-gray-900">
-                                          <BarChart3 className="w-5 h-5 text-gray-900" />
-                                          <span>{course.level}</span>
-                                        </div>
-                                        <div className="flex items-center gap-3 text-gray-900">
-                                          <BookOpen className="w-5 h-5 text-gray-900" />
-                                          <span>{course.Modules_count} Modules</span>
-                                        </div>
-                                      </div>
-                                    </div>
-                    
-                                    <div className="space-y-3">
-                                      <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
-                                        <PhoneCall className="w-5 h-5" />
-                                        Enroll Now
-                                      </button>
-                                      <button
-                                        className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-                                        onClick={() => setShowModal(true)}
-                                      >
-                                        <Download size={20} />
-                                        Download Syllabus
-                                      </button>
+            <div className="sticky top-8">
+              {/* Price Card */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <Image
+                      src={course.course_enroll}
+                      alt={course.title}
+                      width={"400"}
+                      height={300}
+                      className="w-full h-60 object-cover"
+                    />
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3 text-gray-900">
+                      <Clock className="w-5 h-5 text-gray-900" />
+                      <span>{course.course_duration}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-900">
+                      <Award className="w-5 h-5 text-gray-900" />
+                      <span>{course.internship}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-900">
+                      <BarChart3 className="w-5 h-5 text-gray-900" />
+                      <span>{course.level}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-900">
+                      <BookOpen className="w-5 h-5 text-gray-900" />
+                      <span>{course.Modules_count} Modules</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
+                    <PhoneCall className="w-5 h-5" />
+                    Enroll Now
+                  </button>
+                  <button
+                    className="bg-teal-500 hover:text-white hover:bg-blue-900 text-white px-8 w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                    onClick={() => setShowModal(true)}
+                  >
+                    <Download size={20} />
+                    Download Syllabus
+                  </button>
 
                   {showModal && (
                     <DownloadSyllabusModal
@@ -506,16 +513,6 @@ export default function DataAnalyticsCourseDetails() {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Share this course:
-                </h3>
-                <button className="w-full border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
-                  <Share2 className="w-5 h-5" />
-                  Share Course
-                </button>
               </div>
             </div>
           </div>

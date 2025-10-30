@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
+import { useRouter } from "next/navigation";
 
 interface Lesson {
   id: string;
@@ -42,7 +43,7 @@ interface Course {
   id: string;
   title: string;
   description: string;
-  course_overview:string;
+  course_overview: string;
   course_duration: string;
   level: string;
   Modules_count: number;
@@ -55,11 +56,12 @@ interface Course {
   instructor_name: string;
   instructor_title: string;
   instructor_image: string;
-  internship:string;
-  image_enroll:string;
+  internship: string;
+  image_enroll: string;
 }
 
 export default function SAPFICODetailsArea() {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
@@ -70,17 +72,19 @@ export default function SAPFICODetailsArea() {
   const course: Course = {
     id: "3",
     title: "SAP FICO (Financial Accounting & Controlling)",
-    description:"Take charge of your organization’s financial data with SAP FICO. Learn ledger management, asset accounting, cost centers, and reporting to make informed financial decisions. ",
-    course_overview:"Master SAP FICO to perform financial accounting, controlling, and reporting tasks. Learn to manage ledgers, cost centers, and assets while linking FI and CO processes across business functions.",
+    description:
+      "Take charge of your organization’s financial data with SAP FICO. Learn ledger management, asset accounting, cost centers, and reporting to make informed financial decisions. ",
+    course_overview:
+      "Master SAP FICO to perform financial accounting, controlling, and reporting tasks. Learn to manage ledgers, cost centers, and assets while linking FI and CO processes across business functions.",
     course_duration: "3 Months",
     level: "Beginner to Advanced",
     Modules_count: 19,
     students_count: 1890,
     rating: 4.8,
     reviews_count: 254,
-    image_enroll:"/Enroll-Now.png",
+    image_enroll: "/Enroll-Now.png",
     category: "SAP",
-    internship:"3 Months",
+    internship: "3 Months",
     language: "English",
     image_url:
       "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -471,12 +475,8 @@ export default function SAPFICODetailsArea() {
               <p className="text-gray-600 text-lg mb-6">{course.description}</p>
 
               <div className="flex flex-wrap items-center gap-6 mb-6">
-                <div className="flex items-center gap-2">
-                  
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
-                 
-                </div>
+                <div className="flex items-center gap-2"></div>
+                <div className="flex items-center gap-2 text-gray-600"></div>
               </div>
 
               <div className="flex items-center gap-4 mb-8">
@@ -507,9 +507,7 @@ export default function SAPFICODetailsArea() {
               <button
                 onClick={() => setActiveTab("overview")}
                 className={`pb-4 font-semibold text-base ${
-                  activeTab === "overview"
-                    ? "text-teal-600"
-                    : "text-gray-500"
+                  activeTab === "overview" ? "text-teal-600" : "text-gray-500"
                 }`}
               >
                 Course Info
@@ -582,7 +580,6 @@ export default function SAPFICODetailsArea() {
                       <span className="text-sm text-gray-500">
                         {section.Modules.length} Modules
                       </span>
-                       
                     </button>
 
                     {expandedSections.has(section.id) && (
@@ -615,12 +612,12 @@ export default function SAPFICODetailsArea() {
                   <div className="flex items-baseline gap-2 mb-4">
                     <span className="text-4xl font-bold text-gray-900">
                       <img
-                      src={course.image_enroll}
-                      alt={course.title}
-                      width={"400"}
-                      height={300}
-                      className="w-full h-96 object-cover"
-                    />
+                        src={course.image_enroll}
+                        alt={course.title}
+                        width={"400"}
+                        height={300}
+                        className="w-full h-96 object-cover"
+                      />
                     </span>
                   </div>
 
@@ -645,7 +642,10 @@ export default function SAPFICODetailsArea() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
@@ -666,17 +666,6 @@ export default function SAPFICODetailsArea() {
                   )}
                 </div>
               </div>
-
-              {/* Share Course */}
-              {/* <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Share this course:
-                </h3>
-                <button className="w-full border-2 border-gray-300 hover:border-theme-teal text-gray-700 hover:text-theme-teal font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
-                  <Share2 className="w-5 h-5" />
-                  Share Course
-                </button>
-              </div> */}
             </div>
           </div>
         </div>

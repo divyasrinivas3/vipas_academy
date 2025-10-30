@@ -18,7 +18,9 @@ import {
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 export default function SAPONBDetails() {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
   const [expandedSections, setExpandedSections] = useState<Set<number>>(
@@ -354,7 +356,10 @@ export default function SAPONBDetails() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>

@@ -14,11 +14,10 @@ import {
   PhoneCall,
   Download,
   LucideAward,
-  
 } from "lucide-react";
-import Breadcrumb from "./breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
-
+import { useRouter } from "next/navigation";
+import Breadcrumb from "@/app/components/breadcrumb";
 
 interface Lesson {
   id: string;
@@ -46,7 +45,7 @@ interface Course {
   description: string;
   price: number;
   course_duration: string;
-  internship:string;
+  internship: string;
   level: string;
   Modules_count: number;
   students_count: number;
@@ -55,12 +54,13 @@ interface Course {
   category: string;
   language: string;
   image_url: string;
-  image_enroll:string;
+  image_enroll: string;
   instructor_name: string;
   instructor_title: string;
   instructor_image: string;
 }
 export default function SAPSDDetailsArea() {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
@@ -77,7 +77,7 @@ export default function SAPSDDetailsArea() {
       "Gain mastery in SAP SD to streamline sales, manage orders, and optimize distribution processes for real-world business success.",
     price: 199,
     course_duration: "3 months",
-    internship:"3 months",
+    internship: "3 months",
     level: "Beginner to Advanced",
     Modules_count: 120,
     students_count: 1534,
@@ -86,7 +86,7 @@ export default function SAPSDDetailsArea() {
     category: "SAP",
     language: "English",
     image_url: "/SD.png",
-    image_enroll:"/Enroll-Now.png",
+    image_enroll: "/Enroll-Now.png",
     instructor_name: "John Smith",
     instructor_title: "SAP Consultant",
     instructor_image:
@@ -422,14 +422,14 @@ export default function SAPSDDetailsArea() {
   ];
 
   return (
-    <div className="min-h-screen mt-9 bg-white">
-      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 py-8 p-8">
+<div className="min-h-screen mt-9 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Breadcrumb items={breadcrumbItems} />
 
-        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-8 p-9">
-          {/* Main Content */}
-          <div className="lg:col-span-2 p-8">
-            {/* Course Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-8">
+          {/* Main content */}
+          <div className="lg:col-span-2">
+            {/* Header */}
             <div className="mb-8">
               <div className="mb-4">
                 <span className="inline-block px-4 py-1.5 bg-theme-teal-light text-teal-600 text-sm font-medium rounded-md">
@@ -639,7 +639,7 @@ export default function SAPSDDetailsArea() {
                       <Clock className="w-5 h-5 text-gray-400" />
                       <span>{course.course_duration}</span>
                     </div>
-                   
+
                     <div className="flex items-center gap-3 text-gray-700">
                       <LucideAward className="w-5 h-5 text-gray-400" />
                       <span>{course.internship} Internship</span>
@@ -656,7 +656,10 @@ export default function SAPSDDetailsArea() {
                 </div>
                 {/* Action Buttons */}
                 <div className="space-y-3">
-                  <button className="w-full bg-blue-900 hover:bg-teal-600 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>

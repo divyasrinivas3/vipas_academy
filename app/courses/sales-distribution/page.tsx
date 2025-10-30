@@ -10,11 +10,9 @@ import Footer from "@/app/components/Footer";
 const SalesDistributionCourse = () => {
   return (
     <>
-     <MarqueeOne style_2={true} />
       <Navbar />
       <SAPSDDetailsArea />         {/* SAP SD content */}
       <RelatedCourses />           {/* Related courses */}
-     
       <Footer />
     </>
   );

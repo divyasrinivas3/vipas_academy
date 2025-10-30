@@ -19,15 +19,19 @@ import {
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 interface Inclusion {
   id: string;
   inclusion_text: string;
 }
 
 export default function SAPBTPDetails() {
-    const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
-  const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
+  const [expandedSections, setExpandedSections] = useState<Set<number>>(
+    new Set()
+  );
 
   const toggleSection = (sectionId: number) => {
     const newExpanded = new Set(expandedSections);
@@ -36,8 +40,7 @@ export default function SAPBTPDetails() {
     setExpandedSections(newExpanded);
   };
 
-
-   const inclusions: Inclusion[] = [
+  const inclusions: Inclusion[] = [
     { id: "i1", inclusion_text: "Lifetime access to all Modules and updates" },
     { id: "i2", inclusion_text: "Hands-on coding in SAP GUI & HANA Studio" },
     { id: "i3", inclusion_text: "Certificate of completion" },
@@ -47,9 +50,10 @@ export default function SAPBTPDetails() {
 
   const course = {
     title: "SAP BTP (Business Technology Platform)",
-    description:"Learn to build, deploy, and integrate intelligent enterprise applications on SAP’s cloud platform. SAP BTP combines analytics, integration, and development for real-world business solutions. ",
+    description:
+      "Learn to build, deploy, and integrate intelligent enterprise applications on SAP’s cloud platform. SAP BTP combines analytics, integration, and development for real-world business solutions. ",
     course_duration: "3 Months Course",
-    internship:"3 Months internship",
+    internship: "3 Months internship",
     level: "Beginner to Advanced",
     Modules_count: 11,
     students_count: 2480,
@@ -62,7 +66,7 @@ export default function SAPBTPDetails() {
     instructor_title: "SAP Certified BTP Architect",
     instructor_image:
       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100",
-    image_enroll:"/Enroll-Now.png",
+    image_enroll: "/Enroll-Now.png",
   };
 
   const curriculum = [
@@ -236,7 +240,6 @@ export default function SAPBTPDetails() {
                       />
                     ))}
                   </div>
-                
                 </div>
                 {/* <div className="flex items-center gap-2 text-gray-600">
                   <Users className="w-5 h-5" />
@@ -304,11 +307,15 @@ export default function SAPBTPDetails() {
               <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Master SAP BTP from account setup to building cloud applications. Work with CAP & RAP models, Fiori apps, analytics, 
-                  and integration while completing real-time projects.
+                  Master SAP BTP from account setup to building cloud
+                  applications. Work with CAP & RAP models, Fiori apps,
+                  analytics, and integration while completing real-time
+                  projects.
                 </p>
 
-                <h4 className="text-xl font-bold mb-4 mt-8">What You&apos;ll Learn</h4>
+                <h4 className="text-xl font-bold mb-4 mt-8">
+                  What You&apos;ll Learn
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
                     "Understand SAP BTP architecture and services",
@@ -324,14 +331,15 @@ export default function SAPBTPDetails() {
                     </div>
                   ))}
                 </div>
-                 <h4 className="text-xl font-bold mb-4 mt-8">This Course Includes</h4>
-                                {inclusions.map((inc) => (
-                                  <div key={inc.id} className="flex items-center gap-3 mb-2">
-                                    <Check className="w-5 h-5 text-teal-600" />
-                                    <span>{inc.inclusion_text}</span>
-                                  </div>
-                                ))}
-                          
+                <h4 className="text-xl font-bold mb-4 mt-8">
+                  This Course Includes
+                </h4>
+                {inclusions.map((inc) => (
+                  <div key={inc.id} className="flex items-center gap-3 mb-2">
+                    <Check className="w-5 h-5 text-teal-600" />
+                    <span>{inc.inclusion_text}</span>
+                  </div>
+                ))}
               </div>
             ) : (
               <div>
@@ -351,7 +359,9 @@ export default function SAPBTPDetails() {
                         <div className="flex items-center gap-4">
                           <ChevronDown
                             className={`w-5 h-5 text-gray-600 transition-transform ${
-                              expandedSections.has(section.id) ? "rotate-180" : ""
+                              expandedSections.has(section.id)
+                                ? "rotate-180"
+                                : ""
                             }`}
                           />
                           <h4 className="font-semibold text-gray-900">
@@ -385,7 +395,7 @@ export default function SAPBTPDetails() {
           </div>
 
           {/* Sidebar */}
-        <div className="lg:col-span-1">
+          <div className="lg:col-span-1">
             <div className="sticky top-8">
               <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
                 <div className="mb-6">
@@ -417,7 +427,10 @@ export default function SAPBTPDetails() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>

@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
   Clock,
@@ -56,7 +56,8 @@ interface Course {
 }
 
 export default function SAPABAPDetailsArea() {
-  const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
+const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
     new Set()
@@ -72,8 +73,10 @@ export default function SAPABAPDetailsArea() {
   const course: Course = {
     id: "4",
     title: "SAP ABAP",
-    description:"Learn to code and optimize applications on the SAP HANA platform. SAP ABAP on HANA helps you build efficient, scalable, and intelligent business applications. ",
-    course_overview:"Master ABAP on HANA with hands-on coding exercises. Learn CDS views, AMDP, and advanced ABAP techniques to create optimized applications for real business scenarios.",
+    description:
+      "Learn to code and optimize applications on the SAP HANA platform. SAP ABAP on HANA helps you build efficient, scalable, and intelligent business applications. ",
+    course_overview:
+      "Master ABAP on HANA with hands-on coding exercises. Learn CDS views, AMDP, and advanced ABAP techniques to create optimized applications for real business scenarios.",
     course_duration: "3 Months Course",
     level: "Beginner to Advanced",
     Modules_count: 11,
@@ -107,14 +110,48 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 1 — Basics of SAP & ABAP",
       section_order: 1,
       Modules: [
-        { id: "l1", lesson_title: "Introduction to SAP — System, Applications, and Products", lesson_order: 1 },
-        { id: "l2", lesson_title: "Introduction to ABAP (Advanced Business Application Programming)", lesson_order: 2 },
-        { id: "l3", lesson_title: "SAP system architecture & landscape", lesson_order: 3 },
-        { id: "l4", lesson_title: "Application server architecture", lesson_order: 4 },
-        { id: "l5", lesson_title: "Types of SAP GUI; installation & logon", lesson_order: 5 },
-        { id: "l6", lesson_title: "ABAP Workbench and common transaction codes", lesson_order: 6 },
-        { id: "l7", lesson_title: "Object Navigator, Packages and Transport Requests", lesson_order: 7 },
-        { id: "l8", lesson_title: "Header-item table concepts and project types", lesson_order: 8 },
+        {
+          id: "l1",
+          lesson_title:
+            "Introduction to SAP — System, Applications, and Products",
+          lesson_order: 1,
+        },
+        {
+          id: "l2",
+          lesson_title:
+            "Introduction to ABAP (Advanced Business Application Programming)",
+          lesson_order: 2,
+        },
+        {
+          id: "l3",
+          lesson_title: "SAP system architecture & landscape",
+          lesson_order: 3,
+        },
+        {
+          id: "l4",
+          lesson_title: "Application server architecture",
+          lesson_order: 4,
+        },
+        {
+          id: "l5",
+          lesson_title: "Types of SAP GUI; installation & logon",
+          lesson_order: 5,
+        },
+        {
+          id: "l6",
+          lesson_title: "ABAP Workbench and common transaction codes",
+          lesson_order: 6,
+        },
+        {
+          id: "l7",
+          lesson_title: "Object Navigator, Packages and Transport Requests",
+          lesson_order: 7,
+        },
+        {
+          id: "l8",
+          lesson_title: "Header-item table concepts and project types",
+          lesson_order: 8,
+        },
       ],
     },
     {
@@ -122,11 +159,32 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 2 — ABAP Dictionary & Data Modeling",
       section_order: 2,
       Modules: [
-        { id: "l9", lesson_title: "Domains and Data Elements creation", lesson_order: 1 },
-        { id: "l10", lesson_title: "Table creation: header & item tables, primary & foreign keys", lesson_order: 2 },
-        { id: "l11", lesson_title: "Views: Database, Projection, Maintenance, Help", lesson_order: 3 },
-        { id: "l12", lesson_title: "Indexes, buffering & search help", lesson_order: 4 },
-        { id: "l13", lesson_title: "Lock objects and Table Maintenance Generator (TMG)", lesson_order: 5 },
+        {
+          id: "l9",
+          lesson_title: "Domains and Data Elements creation",
+          lesson_order: 1,
+        },
+        {
+          id: "l10",
+          lesson_title:
+            "Table creation: header & item tables, primary & foreign keys",
+          lesson_order: 2,
+        },
+        {
+          id: "l11",
+          lesson_title: "Views: Database, Projection, Maintenance, Help",
+          lesson_order: 3,
+        },
+        {
+          id: "l12",
+          lesson_title: "Indexes, buffering & search help",
+          lesson_order: 4,
+        },
+        {
+          id: "l13",
+          lesson_title: "Lock objects and Table Maintenance Generator (TMG)",
+          lesson_order: 5,
+        },
       ],
     },
     {
@@ -134,11 +192,31 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 3 — ABAP Programming Fundamentals",
       section_order: 3,
       Modules: [
-        { id: "l14", lesson_title: "ABAP Editor introduction & program creation", lesson_order: 1 },
-        { id: "l15", lesson_title: "Data types, variables, and control statements", lesson_order: 2 },
-        { id: "l16", lesson_title: "Internal tables, work areas & operations", lesson_order: 3 },
-        { id: "l17", lesson_title: "Selection screen programming", lesson_order: 4 },
-        { id: "l18", lesson_title: "Field symbols and usage in loops", lesson_order: 5 },
+        {
+          id: "l14",
+          lesson_title: "ABAP Editor introduction & program creation",
+          lesson_order: 1,
+        },
+        {
+          id: "l15",
+          lesson_title: "Data types, variables, and control statements",
+          lesson_order: 2,
+        },
+        {
+          id: "l16",
+          lesson_title: "Internal tables, work areas & operations",
+          lesson_order: 3,
+        },
+        {
+          id: "l17",
+          lesson_title: "Selection screen programming",
+          lesson_order: 4,
+        },
+        {
+          id: "l18",
+          lesson_title: "Field symbols and usage in loops",
+          lesson_order: 5,
+        },
       ],
     },
     {
@@ -146,11 +224,31 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 4 — Reporting (Classical, Interactive, ALV)",
       section_order: 4,
       Modules: [
-        { id: "l19", lesson_title: "Classical & interactive reports, report events", lesson_order: 1 },
-        { id: "l20", lesson_title: "Joins, control break statements, variants", lesson_order: 2 },
-        { id: "l21", lesson_title: "ALV list, grid & hierarchical reports", lesson_order: 3 },
-        { id: "l22", lesson_title: "Field catalog, sorting, filtering & events", lesson_order: 4 },
-        { id: "l23", lesson_title: "ALV using classes (CL_GUI_ALV_GRID, CL_SALV_TABLE)", lesson_order: 5 },
+        {
+          id: "l19",
+          lesson_title: "Classical & interactive reports, report events",
+          lesson_order: 1,
+        },
+        {
+          id: "l20",
+          lesson_title: "Joins, control break statements, variants",
+          lesson_order: 2,
+        },
+        {
+          id: "l21",
+          lesson_title: "ALV list, grid & hierarchical reports",
+          lesson_order: 3,
+        },
+        {
+          id: "l22",
+          lesson_title: "Field catalog, sorting, filtering & events",
+          lesson_order: 4,
+        },
+        {
+          id: "l23",
+          lesson_title: "ALV using classes (CL_GUI_ALV_GRID, CL_SALV_TABLE)",
+          lesson_order: 5,
+        },
       ],
     },
     {
@@ -158,9 +256,21 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 5 — Debugging & Tools",
       section_order: 5,
       Modules: [
-        { id: "l24", lesson_title: "Debugging fundamentals & breakpoints", lesson_order: 1 },
-        { id: "l25", lesson_title: "Watchpoints & memory analysis", lesson_order: 2 },
-        { id: "l26", lesson_title: "Desktop management & update debugging", lesson_order: 3 },
+        {
+          id: "l24",
+          lesson_title: "Debugging fundamentals & breakpoints",
+          lesson_order: 1,
+        },
+        {
+          id: "l25",
+          lesson_title: "Watchpoints & memory analysis",
+          lesson_order: 2,
+        },
+        {
+          id: "l26",
+          lesson_title: "Desktop management & update debugging",
+          lesson_order: 3,
+        },
       ],
     },
     {
@@ -168,8 +278,16 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 6 — Modularization & Reuse",
       section_order: 6,
       Modules: [
-        { id: "l27", lesson_title: "Includes, Subroutines & Function Modules", lesson_order: 1 },
-        { id: "l28", lesson_title: "Function groups & best practices", lesson_order: 2 },
+        {
+          id: "l27",
+          lesson_title: "Includes, Subroutines & Function Modules",
+          lesson_order: 1,
+        },
+        {
+          id: "l28",
+          lesson_title: "Function groups & best practices",
+          lesson_order: 2,
+        },
       ],
     },
     {
@@ -177,8 +295,16 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 7 — File Handling & Archiving",
       section_order: 7,
       Modules: [
-        { id: "l29", lesson_title: "File upload/download on presentation & app servers", lesson_order: 1 },
-        { id: "l30", lesson_title: "Basics of file archiving", lesson_order: 2 },
+        {
+          id: "l29",
+          lesson_title: "File upload/download on presentation & app servers",
+          lesson_order: 1,
+        },
+        {
+          id: "l30",
+          lesson_title: "Basics of file archiving",
+          lesson_order: 2,
+        },
       ],
     },
     {
@@ -186,10 +312,22 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 8 — Data Migration & Interfaces",
       section_order: 8,
       Modules: [
-        { id: "l31", lesson_title: "BDC, CALL TRANSACTION & SESSION methods", lesson_order: 1 },
-        { id: "l32", lesson_title: "LSMW basics and recordings", lesson_order: 2 },
+        {
+          id: "l31",
+          lesson_title: "BDC, CALL TRANSACTION & SESSION methods",
+          lesson_order: 1,
+        },
+        {
+          id: "l32",
+          lesson_title: "LSMW basics and recordings",
+          lesson_order: 2,
+        },
         { id: "l33", lesson_title: "BAPI & RFC integration", lesson_order: 3 },
-        { id: "l34", lesson_title: "IDoc architecture, testing & reprocessing", lesson_order: 4 },
+        {
+          id: "l34",
+          lesson_title: "IDoc architecture, testing & reprocessing",
+          lesson_order: 4,
+        },
       ],
     },
     {
@@ -197,9 +335,21 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 9 — Enhancements & Exits",
       section_order: 9,
       Modules: [
-        { id: "l35", lesson_title: "Implicit/Explicit enhancements", lesson_order: 1 },
-        { id: "l36", lesson_title: "Customer exits & BAdI implementations", lesson_order: 2 },
-        { id: "l37", lesson_title: "User-exits & BTE comparisons", lesson_order: 3 },
+        {
+          id: "l35",
+          lesson_title: "Implicit/Explicit enhancements",
+          lesson_order: 1,
+        },
+        {
+          id: "l36",
+          lesson_title: "Customer exits & BAdI implementations",
+          lesson_order: 2,
+        },
+        {
+          id: "l37",
+          lesson_title: "User-exits & BTE comparisons",
+          lesson_order: 3,
+        },
       ],
     },
     {
@@ -207,9 +357,21 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 10 — Forms (SmartForms & Adobe Forms)",
       section_order: 10,
       Modules: [
-        { id: "l38", lesson_title: "SmartForms creation, windows & texts", lesson_order: 1 },
-        { id: "l39", lesson_title: "Calling SmartForms, debugging & PDF output", lesson_order: 2 },
-        { id: "l40", lesson_title: "Adobe Forms design & execution", lesson_order: 3 },
+        {
+          id: "l38",
+          lesson_title: "SmartForms creation, windows & texts",
+          lesson_order: 1,
+        },
+        {
+          id: "l39",
+          lesson_title: "Calling SmartForms, debugging & PDF output",
+          lesson_order: 2,
+        },
+        {
+          id: "l40",
+          lesson_title: "Adobe Forms design & execution",
+          lesson_order: 3,
+        },
       ],
     },
     {
@@ -217,8 +379,16 @@ export default function SAPABAPDetailsArea() {
       section_title: "Module 11 — Transport Organizer & Version Management",
       section_order: 11,
       Modules: [
-        { id: "l41", lesson_title: "Workbench requests & transport statuses", lesson_order: 1 },
-        { id: "l42", lesson_title: "Version management & transport of copies", lesson_order: 2 },
+        {
+          id: "l41",
+          lesson_title: "Workbench requests & transport statuses",
+          lesson_order: 1,
+        },
+        {
+          id: "l42",
+          lesson_title: "Version management & transport of copies",
+          lesson_order: 2,
+        },
       ],
     },
   ];
@@ -238,7 +408,9 @@ export default function SAPABAPDetailsArea() {
           {/* Main content */}
           <div className="lg:col-span-2">
             <div className="mb-8">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">{course.title}</h1>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                {course.title}
+              </h1>
               <p className="text-gray-600 text-lg mb-6">{course.description}</p>
               <img
                 src={course.image_url}
@@ -260,7 +432,9 @@ export default function SAPABAPDetailsArea() {
               <button
                 onClick={() => setActiveTab("curriculum")}
                 className={`pb-4 font-semibold text-base ${
-                  activeTab === "curriculum" ? "text-theme-teal" : "text-gray-500"
+                  activeTab === "curriculum"
+                    ? "text-theme-teal"
+                    : "text-gray-500"
                 }`}
               >
                 Curriculum
@@ -273,7 +447,9 @@ export default function SAPABAPDetailsArea() {
                 <h3 className="text-2xl font-bold mb-4">Course Overview</h3>
                 <p className="text-gray-600 mb-6">{course.course_overview}</p>
 
-                <h4 className="text-xl font-bold mb-4">What You&apos;ll Learn</h4>
+                <h4 className="text-xl font-bold mb-4">
+                  What You&apos;ll Learn
+                </h4>
                 <div className="space-y-2">
                   {[
                     "Write ABAP programs optimized for HANA ",
@@ -288,7 +464,9 @@ export default function SAPABAPDetailsArea() {
                   ))}
                 </div>
 
-                <h4 className="text-xl font-bold mb-4 mt-8">This Course Includes</h4>
+                <h4 className="text-xl font-bold mb-4 mt-8">
+                  This Course Includes
+                </h4>
                 {inclusions.map((inc) => (
                   <div key={inc.id} className="flex items-center gap-3 mb-2">
                     <Check className="w-5 h-5 text-teal-600" />
@@ -375,7 +553,10 @@ export default function SAPABAPDetailsArea() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="w-full bg-teal-600 hover:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
                     <PhoneCall className="w-5 h-5" />
                     Enroll Now
                   </button>
