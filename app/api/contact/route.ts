@@ -66,13 +66,13 @@ export async function POST(req: NextRequest) {
 
         <p>Best Regards,</p>
         <p><strong>Team Vipas Academy</strong><br/>
-        <a href="https://vipastechno.com">www.vipastechno.com</a></p>
+        <a href="https://vipasacademy.com">www.vipasacademy.com</a></p>
       `,
     });
 
     // 3️⃣ Save to Google Sheet
     const sheetResponse = await fetch(
-      "https://api.sheetbest.com/sheets/7ea535dc-c02c-4388-9ca7-66b7ed1e5929", // <-- your Sheet.best URL
+      process.env.SHEET_BEST_URL as string,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
