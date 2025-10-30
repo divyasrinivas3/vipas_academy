@@ -18,7 +18,7 @@ import {
 import Breadcrumb from "@/app/components/breadcrumb";
 import DownloadSyllabusModal from "@/app/components/DownloadSyllabusModal";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 export default function FullStackCourseDetails() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
