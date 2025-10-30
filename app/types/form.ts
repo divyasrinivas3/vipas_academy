@@ -1,4 +1,6 @@
 export type Education = "B.Tech" | "B.E" | "M.Tech" | "MBA" | "Degree" | "";
+export type InquiryType = "Demo" | "Career Guidance" | "Course" | "";
+
 
 export type PlanOfFuture =
   | "SAP Consultant"
@@ -9,6 +11,16 @@ export type PlanOfFuture =
   | "Programmer"
   | "";
 
+export const inquiryTypeOptions: InquiryType[] = ["Demo", "Career Guidance", "Course"];
+export interface ContactFormData {
+  name: string;
+  contact: string;
+  email: string;
+  education: Education;
+  planOfFuture: PlanOfFuture;
+  careerPath: CoachingProgram | "";
+  inquiryType: InquiryType; // 👈 NEW FIELD ADDED
+}
 export const COACHING_PROGRAMS = [
   "SAP SD",
   "SAP MM",
