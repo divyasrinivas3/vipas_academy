@@ -1,9 +1,19 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { BookOpen, Mail, Phone, MapPin, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import {
+  BookOpen,
+  Mail,
+  Phone,
+  MapPin,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
+import Image from "next/image";
 
 export default function Footer() {
   const router = useRouter();
@@ -25,29 +35,29 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Twitter, href: "https://x.com/vipasacademy?s=21", label: "Twitter" },
-    { icon: Instagram, href: "https://www.instagram.com/vipas_academy?igsh=cTlyeDFkYXBmNWpq", label: "Instagram" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/vipas_academy?igsh=cTlyeDFkYXBmNWpq",
+      label: "Instagram",
+    },
     { icon: Linkedin, href: "https://www.linkedin.com/in/vipas-academy", label: "LinkedIn" },
     { icon: Youtube, href: "#", label: "YouTube" },
   ];
 
-  // 🔥 Scroll or Navigate Function
   const handleLinkClick = (href: string) => {
     if (href.startsWith("#")) {
       if (pathname === "/") {
-        // Already on homepage → just scroll
         const el = document.querySelector(href);
         if (el) el.scrollIntoView({ behavior: "smooth" });
       } else {
-        // Navigate to homepage with section hash
         router.push(`/${href}`);
       }
     } else {
-      // Navigate normally for other pages
       router.push(href);
     }
   };
 
-  return (
+  return  (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
@@ -59,34 +69,48 @@ export default function Footer() {
         >
           {/* Company Info */}
           <motion.div variants={staggerItem} className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-900 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-white" />
+            {/* ✅ Larger Logo Section */}
+            <div className="flex items-center space-x-4 mb-8">
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 justify-center"> {/* increased size */}
+                <Image
+                  src="/vipas_logo_bg.png" // 👈 place logo here: public/images/vipas-logo.png
+                  alt="Vipas Academy Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <span className="text-2xl font-bold text-white">Vipas Academy</span>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Empowering learners worldwide with high-quality online education. Transform your career and achieve your goals with our expert-led courses.
+
+            <p className="text-gray-400 mb-6 leading-relaxed text-left">
+              Empowering learners worldwide with high-quality online education. Transform
+              your career and achieve your goals with our expert-led courses.
             </p>
-            <div className="space-y-3">
+
+            <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5 text-blue-500" />
                 </div>
-                <span>info@vipasacademy.com</span>
+                <span className="text-sm sm:text-base break-all">
+                  Vipasacademy1@gmail.com
+                </span>
               </div>
+
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-blue-500" />
                 </div>
-                <span>+91 99666 52099</span>
+                <span className="text-sm sm:text-base">+91 99666 52099</span>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center">
-                  <MapPin className="w-10 h-5 text-blue-500" />
+
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-blue-500" />
                 </div>
-                <span className="flex items-start">
-                  Door no. 19-8-112/d, Second floor, Kora Towers, Hathiramji Colony, near Annamiah Circle, Air Bypass Road, Tirupati, 517501
+                <span className="text-sm sm:text-base text-left leading-relaxed">
+                  Door No. 19-8-112/D, Second Floor, Kora Towers, Hathiramji Colony, near
+                  Annamiah Circle, Air Bypass Road, Tirupati, 517501
                 </span>
               </div>
             </div>
@@ -94,7 +118,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <motion.div variants={staggerItem}>
-            <h3 className="text-white text-lg font-bold mb-4">Quick Links</h3>
+            <h3 className="text-white text-xl font-bold text-center mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -136,7 +160,9 @@ export default function Footer() {
           className="border-t border-gray-800 pt-8"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm">© 2024 Vipas Academy. All rights reserved.</p>
+            <p className="text-gray-400 text-sm text-center md:text-left">
+              © 2024 Vipas Academy. All rights reserved.
+            </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => {
                 const Icon = social.icon;

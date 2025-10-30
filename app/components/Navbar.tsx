@@ -84,7 +84,7 @@ export default function Navbar() {
               )
             )}
             <button
-              onClick={() => goToSection("/", "contact")}
+              onClick={() => goToPage("/contact")}
               className="bg-gradient-to-r from-blue-900 to-blue-900 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Contact Us

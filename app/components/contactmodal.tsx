@@ -26,7 +26,7 @@ export default function ContactModal() {
             >
               <X className="w-6 h-6" />
             </button>
-            <ContactForm />
+            <ContactForm isOpen={isOpen} onClose={() => setIsOpen(false)} />
           </div>
         </div>
       )}

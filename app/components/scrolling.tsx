@@ -10,7 +10,7 @@ const MarqueeFour = () => {
                     <div className="comm">
                         <div></div>
                         <div className="cmn-textslide"><i className="flaticon-mortarboard"></i> Education & University</div>
-                        <div className="cmn-textslide"><i className="flaticon-mortarboard"></i> Online Education</div>
+                        <div className="cmn-textslide"><i className="flaticon-mortarboard"></i> Online courses</div>
                         <div className="cmn-textslide"><i className="flaticon-mortarboard"></i> 230+ Quality Courses</div>
                         <div className="cmn-textslide"><i className="flaticon-mortarboard"></i> Experience Instructors</div>
                         <div className="cmn-textslide"><i className="flaticon-mortarboard"></i> Kindergarten Study</div>

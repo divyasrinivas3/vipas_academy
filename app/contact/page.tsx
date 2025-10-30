@@ -143,7 +143,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600">info@vipasacademy.com</p>
+                    <p className="text-gray-600">Vipasacademy1@gmail.com</p>
                   </div>
                 </div>
 
