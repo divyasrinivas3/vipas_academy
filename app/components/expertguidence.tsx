@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Send } from "lucide-react";
+import { Send, Phone, Mail, MapPin } from "lucide-react";
 import {
   educationOptions,
   planOfFutureOptions,
@@ -16,18 +16,24 @@ import { contactFormSchema, ContactFormSchema } from "../schemas/contact";
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
 
-  const { register, handleSubmit, control, watch, reset, formState: { errors } } =
-    useForm<ContactFormSchema>({
-      resolver: zodResolver(contactFormSchema),
-      defaultValues: {
-        name: "",
-        contact: "",
-        email: "",
-        education: "",
-        planOfFuture: "",
-        careerPath: "",
-      },
-    });
+  const {
+    register,
+    handleSubmit,
+    control,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      contact: "",
+      email: "",
+      education: "",
+      planOfFuture: "",
+      careerPath: "",
+    },
+  });
 
   const selectedPlan = watch("planOfFuture") as PlanOfFuture;
 
