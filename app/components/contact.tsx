@@ -23,7 +23,7 @@ export default function ContactForm() {
     watch,
     reset,
     formState: { errors },
-  } = useForm<ContactFormSchema>({
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
